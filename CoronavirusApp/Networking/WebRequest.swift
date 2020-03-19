@@ -9,35 +9,35 @@
 import Foundation
 import Alamofire
 
+typealias RequestFailure = (NSError) -> Void
+typealias RequestSucceeded<T: Codable> = (T?) -> Void
+
 protocol WebRequestProtocol {
-    func request(toUrl url: String,
-                 method: HTTPMethod,
-                 parameters: [String: Any]?,
-                 encoding: ParameterEncoding,
-                 headers: HTTPHeaders?,
-                 completion: @escaping (_ response: Any?, _ error: Error?) -> ())
+    func request<T>(endpoint: Endpoint,
+                    success: @escaping RequestSucceeded<T>,
+                    failure: @escaping RequestFailure)
 }
 
 class WebRequest: WebRequestProtocol {
-    func request(toUrl url: String,
-                 method: HTTPMethod,
-                 parameters: [String: Any]?,
-                 encoding: ParameterEncoding,
-                 headers: HTTPHeaders?,
-                 completion: @escaping (_ response: Any?, _ error: Error?) -> ()) {
-        let request = AF.request(url,
-                                 method: method,
-                                 parameters: parameters,
-                                 encoding: encoding,
-                                 headers: headers,
+     func request<T>(endpoint: Endpoint,
+                     success: @escaping RequestSucceeded<T>,
+                     failure: @escaping RequestFailure) where T: Codable {
+        let request = AF.request(endpoint.path,
+                                 method: endpoint.method,
+                                 parameters: endpoint.parameters,
+                                 encoding: endpoint.encoding,
+                                 headers: nil,
                                  interceptor: nil)
         request.validate().responseJSON { (response) in
             let result = response.result
             switch result {
             case .success(let response):
-                completion(response, nil)
+                let jsonString = response as? [String: Any]
+                let data = jsonString?.description.data(using: .utf8)
+                let responseData = try? JSONDecoder().decode(T.self, from: data!)
+                success(responseData)
             case .failure(let error):
-                completion(nil, error)
+                failure(NSError(domain: error.errorDescription ?? "", code: 1, userInfo: nil))
             }
         }
     }

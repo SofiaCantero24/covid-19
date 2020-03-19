@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import Alamofire
+
+struct Endpoint {
+    var path: String
+    var method: HTTPMethod
+    var encoding: ParameterEncoding
+    var parameters: [String: Any]?
+}

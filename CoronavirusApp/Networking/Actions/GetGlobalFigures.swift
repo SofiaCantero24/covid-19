@@ -10,16 +10,20 @@ import Foundation
 import Alamofire
 
 class GetGlobalFigures {
-    var networking: NetworkingProtocol
+    var networking: WebRequestProtocol
 
-    init(networking: NetworkingProtocol = Networking()) {
+    init(networking: WebRequestProtocol = WebRequest()) {
         self.networking = networking
     }
 
-    func execute(completion: @escaping (_ response: Any?, _ error: Error?) -> ()) {
-        networking.request(method: .get,
-                           parameters: nil,
-                           encoding: URLEncoding.default,
-                           completion: completion)
+    func execute(success: @escaping RequestSucceeded<GlobalFigures>,
+                 failure: @escaping RequestFailure) {
+        let endpoint = Endpoint(path: "",
+                                method: .get,
+                                encoding: URLEncoding.default,
+                                parameters: nil)
+        networking.request(endpoint: endpoint,
+                           success: success,
+                           failure: failure)
     }
 }
