@@ -6,6 +6,7 @@ target 'CoronavirusApp' do
   use_frameworks!
 
   # Pods for CoronavirusApp
+  pod 'Alamofire'
 
   target 'CoronavirusAppTests' do
     inherit! :search_paths
