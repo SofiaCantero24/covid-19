@@ -9,13 +9,5 @@
 import Foundation
 
 class CoronavirusViewModel {
-    var goblalFigures: GlobalFigures?
-
-    func getGlobalFigures() {
-        GetGlobalFigures().execute(success: { goblalFigures in
-            self.goblalFigures = goblalFigures
-        }) { error in
-            debugPrint(error)
-        }
-    }
+    
 }

@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct CoronavirusCountries: Codable {
+    var countries: [FiguresByCountry]
+}
+
 struct FiguresByCountry: Codable {
     var confirmed: Int
     var deaths: Int

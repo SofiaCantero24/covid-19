@@ -16,7 +16,7 @@ class GetGlobalFigures {
         self.networking = networking
     }
 
-    func execute(success: @escaping RequestSucceeded<GlobalFigures>,
+    func execute(success: @escaping RequestSucceeded<GlobalStats>,
                  failure: @escaping RequestFailure) {
         let endpoint = Endpoint(path: "",
                                 method: .get,
