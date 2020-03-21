@@ -1,6 +1,0 @@
-framework module Pods_CoronavirusApp_CoronavirusAppUITests {
-  umbrella header "Pods-CoronavirusApp-CoronavirusAppUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

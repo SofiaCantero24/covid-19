@@ -1,7 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp/Pods-CoronavirusApp-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
-${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
-${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework
-${BUILT_PRODUCTS_DIR}/Result/Result.framework
-${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
