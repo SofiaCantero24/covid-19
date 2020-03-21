@@ -1,0 +1,29 @@
+//
+//  GetGlobalFigures.swift
+//  CoronavirusApp
+//
+//  Created by Junior Sancho on 3/18/20.
+//  Copyright © 2020 Sofia Cantero. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
+class GetGlobalFigures {
+    var networking: WebRequestProtocol
+
+    init(networking: WebRequestProtocol = WebRequest()) {
+        self.networking = networking
+    }
+
+    func execute(success: @escaping RequestSucceeded<GlobalStats>,
+                 failure: @escaping RequestFailure) {
+        let endpoint = Endpoint(path: "https://freenlace.net/app/api/covid19/total",
+                                method: .get,
+                                encoding: URLEncoding.default,
+                                parameters: nil)
+        networking.request(endpoint: endpoint,
+                           success: success,
+                           failure: failure)
+    }
+}

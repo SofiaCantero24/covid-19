@@ -18,22 +18,44 @@
 		E44FEBF1242301A0008580C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44FEBEF242301A0008580C8 /* LaunchScreen.storyboard */; };
 		E44FEBFC242301A1008580C8 /* CoronavirusAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEBFB242301A1008580C8 /* CoronavirusAppTests.swift */; };
 		E44FEC07242301A1008580C8 /* CoronavirusAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC06242301A1008580C8 /* CoronavirusAppUITests.swift */; };
-		E44FEC1624230B66008580C8 /* WebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC1524230B66008580C8 /* WebRequest.swift */; };
-		E44FEC1B242315AC008580C8 /* FiguresByCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC1A242315AC008580C8 /* FiguresByCountry.swift */; };
-		E44FEC1E24231797008580C8 /* GetGlobalFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC1D24231797008580C8 /* GetGlobalFigures.swift */; };
-		E44FEC2024231943008580C8 /* GetFiguresByCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC1F24231943008580C8 /* GetFiguresByCountry.swift */; };
-		E44FEC2624231EAA008580C8 /* CoronavirusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC2424231EAA008580C8 /* CoronavirusViewController.swift */; };
-		E44FEC2724231EAA008580C8 /* CoronavirusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC2524231EAA008580C8 /* CoronavirusViewController.xib */; };
-		E44FEC2924231F6C008580C8 /* CoronavirusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC2824231F6C008580C8 /* CoronavirusViewModel.swift */; };
-		E44FEC2B24232250008580C8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC2A24232250008580C8 /* Endpoint.swift */; };
+		E44FEC2624231EAA008580C8 /* FiguresInTheWorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC2424231EAA008580C8 /* FiguresInTheWorldViewController.swift */; };
+		E44FEC2924231F6C008580C8 /* FiguresInTheWorldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC2824231F6C008580C8 /* FiguresInTheWorldViewModel.swift */; };
 		E44FEC2F2423BE8E008580C8 /* GlobalFiguresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC2D2423BE8E008580C8 /* GlobalFiguresViewController.swift */; };
-		E44FEC302423BE8E008580C8 /* GlobalFiguresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC2E2423BE8E008580C8 /* GlobalFiguresViewController.xib */; };
 		E44FEC332423C347008580C8 /* FigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC322423C347008580C8 /* FigureView.swift */; };
 		E44FEC352423C357008580C8 /* FigureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC342423C357008580C8 /* FigureView.xib */; };
 		E44FEC372423C421008580C8 /* FigureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC362423C421008580C8 /* FigureViewModel.swift */; };
 		E44FEC392423C558008580C8 /* GlobalFiguresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC382423C558008580C8 /* GlobalFiguresViewModel.swift */; };
 		E44FEC3C2423D092008580C8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC3B2423D092008580C8 /* UIViewExtension.swift */; };
-		E44FEC3E2423D950008580C8 /* GlobalFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC3D2423D950008580C8 /* GlobalFigures.swift */; };
+		E44FEC4124244423008580C8 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC4024244423008580C8 /* Mappable.swift */; };
+		E44FEC6C24244901008580C8 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC5824244901008580C8 /* RestAPI.swift */; };
+		E44FEC6F24244901008580C8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC5C24244901008580C8 /* API.swift */; };
+		E44FEC7024244901008580C8 /* GlobalFiguresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC5F24244901008580C8 /* GlobalFiguresService.swift */; };
+		E44FEC7124244901008580C8 /* FiguresByCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6124244901008580C8 /* FiguresByCountryService.swift */; };
+		E44FEC7224244901008580C8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6224244901008580C8 /* Network.swift */; };
+		E44FEC7324244901008580C8 /* RouterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6524244901008580C8 /* RouterBase.swift */; };
+		E44FEC7424244901008580C8 /* RouterURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6624244901008580C8 /* RouterURLs.swift */; };
+		E44FEC7524244901008580C8 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6724244901008580C8 /* URLConstants.swift */; };
+		E44FEC7624244901008580C8 /* MoyaPlugginOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6824244901008580C8 /* MoyaPlugginOverride.swift */; };
+		E44FEC7724244901008580C8 /* ServiceErrorCostants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6A24244901008580C8 /* ServiceErrorCostants.swift */; };
+		E44FEC7824244901008580C8 /* HandlerNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC6B24244901008580C8 /* HandlerNetworkError.swift */; };
+		E44FEC7C24244BA6008580C8 /* FiguresByCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC7A24244BA6008580C8 /* FiguresByCountry.swift */; };
+		E44FEC7D24244BA6008580C8 /* GlobalFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC7B24244BA6008580C8 /* GlobalFigures.swift */; };
+		E44FEC8024244FC7008580C8 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC7F24244FC7008580C8 /* AppConfiguration.swift */; };
+		E44FEC822424500D008580C8 /* Encodable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC812424500D008580C8 /* Encodable+JSON.swift */; };
+		E44FEC8C24257F3D008580C8 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC8A24257F3D008580C8 /* CountryTableViewCell.swift */; };
+		E44FEC8D24257F3D008580C8 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC8B24257F3D008580C8 /* CountryTableViewCell.xib */; };
+		E44FEC8F24258ECB008580C8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC8E24258ECB008580C8 /* Storyboard.storyboard */; };
+		E44FEC932425B62D008580C8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC912425B62D008580C8 /* MapViewController.swift */; };
+		E44FEC942425B62D008580C8 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC922425B62D008580C8 /* MapViewController.xib */; };
+		E44FEC962425C19E008580C8 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC952425C19E008580C8 /* MapViewModel.swift */; };
+		E44FECC324262C1F008580C8 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44FECBF24262C1E008580C8 /* Montserrat-Light.ttf */; };
+		E44FECC424262C1F008580C8 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44FECC024262C1F008580C8 /* Montserrat-Regular.ttf */; };
+		E44FECC524262C1F008580C8 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44FECC124262C1F008580C8 /* Montserrat-SemiBold.ttf */; };
+		E44FECC624262C1F008580C8 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44FECC224262C1F008580C8 /* Montserrat-Medium.ttf */; };
+		E44FECC824262CE1008580C8 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44FECC724262CE1008580C8 /* Montserrat-Bold.ttf */; };
+		E44FECCB24262D6A008580C8 /* GlobalFigureTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FECCA24262D6A008580C8 /* GlobalFigureTabView.swift */; };
+		E44FECCD24262EF8008580C8 /* GlobalFigureTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FECCC24262EF8008580C8 /* GlobalFigureTabView.xib */; };
+		E44FECCF24263401008580C8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FECCE24263401008580C8 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,22 +97,44 @@
 		E44FEC02242301A1008580C8 /* CoronavirusAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronavirusAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44FEC06242301A1008580C8 /* CoronavirusAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusAppUITests.swift; sourceTree = "<group>"; };
 		E44FEC08242301A1008580C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E44FEC1524230B66008580C8 /* WebRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequest.swift; sourceTree = "<group>"; };
-		E44FEC1A242315AC008580C8 /* FiguresByCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiguresByCountry.swift; sourceTree = "<group>"; };
-		E44FEC1D24231797008580C8 /* GetGlobalFigures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalFigures.swift; sourceTree = "<group>"; };
-		E44FEC1F24231943008580C8 /* GetFiguresByCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiguresByCountry.swift; sourceTree = "<group>"; };
-		E44FEC2424231EAA008580C8 /* CoronavirusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusViewController.swift; sourceTree = "<group>"; };
-		E44FEC2524231EAA008580C8 /* CoronavirusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoronavirusViewController.xib; sourceTree = "<group>"; };
-		E44FEC2824231F6C008580C8 /* CoronavirusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusViewModel.swift; sourceTree = "<group>"; };
-		E44FEC2A24232250008580C8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E44FEC2424231EAA008580C8 /* FiguresInTheWorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiguresInTheWorldViewController.swift; sourceTree = "<group>"; };
+		E44FEC2824231F6C008580C8 /* FiguresInTheWorldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiguresInTheWorldViewModel.swift; sourceTree = "<group>"; };
 		E44FEC2D2423BE8E008580C8 /* GlobalFiguresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFiguresViewController.swift; sourceTree = "<group>"; };
-		E44FEC2E2423BE8E008580C8 /* GlobalFiguresViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlobalFiguresViewController.xib; sourceTree = "<group>"; };
 		E44FEC322423C347008580C8 /* FigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureView.swift; sourceTree = "<group>"; };
 		E44FEC342423C357008580C8 /* FigureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FigureView.xib; sourceTree = "<group>"; };
 		E44FEC362423C421008580C8 /* FigureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureViewModel.swift; sourceTree = "<group>"; };
 		E44FEC382423C558008580C8 /* GlobalFiguresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFiguresViewModel.swift; sourceTree = "<group>"; };
 		E44FEC3B2423D092008580C8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		E44FEC3D2423D950008580C8 /* GlobalFigures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFigures.swift; sourceTree = "<group>"; };
+		E44FEC4024244423008580C8 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		E44FEC5824244901008580C8 /* RestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		E44FEC5C24244901008580C8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E44FEC5F24244901008580C8 /* GlobalFiguresService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFiguresService.swift; sourceTree = "<group>"; };
+		E44FEC6124244901008580C8 /* FiguresByCountryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiguresByCountryService.swift; sourceTree = "<group>"; };
+		E44FEC6224244901008580C8 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E44FEC6524244901008580C8 /* RouterBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterBase.swift; sourceTree = "<group>"; };
+		E44FEC6624244901008580C8 /* RouterURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterURLs.swift; sourceTree = "<group>"; };
+		E44FEC6724244901008580C8 /* URLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		E44FEC6824244901008580C8 /* MoyaPlugginOverride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaPlugginOverride.swift; sourceTree = "<group>"; };
+		E44FEC6A24244901008580C8 /* ServiceErrorCostants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceErrorCostants.swift; sourceTree = "<group>"; };
+		E44FEC6B24244901008580C8 /* HandlerNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerNetworkError.swift; sourceTree = "<group>"; };
+		E44FEC7A24244BA6008580C8 /* FiguresByCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiguresByCountry.swift; sourceTree = "<group>"; };
+		E44FEC7B24244BA6008580C8 /* GlobalFigures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFigures.swift; sourceTree = "<group>"; };
+		E44FEC7F24244FC7008580C8 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		E44FEC812424500D008580C8 /* Encodable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+JSON.swift"; sourceTree = "<group>"; };
+		E44FEC8A24257F3D008580C8 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		E44FEC8B24257F3D008580C8 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		E44FEC8E24258ECB008580C8 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		E44FEC912425B62D008580C8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E44FEC922425B62D008580C8 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		E44FEC952425C19E008580C8 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		E44FECBF24262C1E008580C8 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		E44FECC024262C1F008580C8 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		E44FECC124262C1F008580C8 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		E44FECC224262C1F008580C8 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		E44FECC724262CE1008580C8 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		E44FECCA24262D6A008580C8 /* GlobalFigureTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFigureTabView.swift; sourceTree = "<group>"; };
+		E44FECCC24262EF8008580C8 /* GlobalFigureTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlobalFigureTabView.xib; sourceTree = "<group>"; };
+		E44FECCE24263401008580C8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F7E271981E97F0BF2FDAA093 /* Pods-CoronavirusApp-CoronavirusAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronavirusApp-CoronavirusAppUITests.release.xcconfig"; path = "Target Support Files/Pods-CoronavirusApp-CoronavirusAppUITests/Pods-CoronavirusApp-CoronavirusAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FBDD07C87C8F6EADF22B7A18 /* Pods-CoronavirusAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronavirusAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CoronavirusAppTests/Pods-CoronavirusAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,9 +205,10 @@
 		E44FEBE32423014F008580C8 /* CoronavirusApp */ = {
 			isa = PBXGroup;
 			children = (
+				E44FEC7E24244FB2008580C8 /* Common */,
 				E44FEC3A2423D07E008580C8 /* Utilities */,
 				E44FEC2324231DBA008580C8 /* UI */,
-				E44FEC1424230A2D008580C8 /* Networking */,
+				E44FEC5524244901008580C8 /* NetworkingLast */,
 				E44FEBE42423014F008580C8 /* AppDelegate.swift */,
 				E44FEBE62423014F008580C8 /* SceneDelegate.swift */,
 				E44FEBE82423014F008580C8 /* ContentView.swift */,
@@ -201,42 +246,13 @@
 			path = CoronavirusAppUITests;
 			sourceTree = "<group>";
 		};
-		E44FEC1424230A2D008580C8 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				E44FEC1C2423166B008580C8 /* Actions */,
-				E44FEC1724231537008580C8 /* Model */,
-				E44FEC1524230B66008580C8 /* WebRequest.swift */,
-				E44FEC2A24232250008580C8 /* Endpoint.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		E44FEC1724231537008580C8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E44FEC3D2423D950008580C8 /* GlobalFigures.swift */,
-				E44FEC1A242315AC008580C8 /* FiguresByCountry.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E44FEC1C2423166B008580C8 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				E44FEC1D24231797008580C8 /* GetGlobalFigures.swift */,
-				E44FEC1F24231943008580C8 /* GetFiguresByCountry.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
 		E44FEC2324231DBA008580C8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E44FEC8E24258ECB008580C8 /* Storyboard.storyboard */,
+				E44FEC902425B613008580C8 /* Map */,
+				E44FEC8824257531008580C8 /* FiguresByCountry */,
 				E44FEC2C2423BE22008580C8 /* GlogalFigures */,
-				E44FEC2424231EAA008580C8 /* CoronavirusViewController.swift */,
-				E44FEC2524231EAA008580C8 /* CoronavirusViewController.xib */,
-				E44FEC2824231F6C008580C8 /* CoronavirusViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -246,7 +262,6 @@
 			children = (
 				E44FEC312423C2E0008580C8 /* Views */,
 				E44FEC2D2423BE8E008580C8 /* GlobalFiguresViewController.swift */,
-				E44FEC2E2423BE8E008580C8 /* GlobalFiguresViewController.xib */,
 				E44FEC382423C558008580C8 /* GlobalFiguresViewModel.swift */,
 			);
 			path = GlogalFigures;
@@ -265,9 +280,172 @@
 		E44FEC3A2423D07E008580C8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E44FEC7F24244FC7008580C8 /* AppConfiguration.swift */,
+				E44FEC9724262B7D008580C8 /* CustomFonts */,
+				E44FEC3F24244405008580C8 /* Mappable */,
 				E44FEC3B2423D092008580C8 /* UIViewExtension.swift */,
+				E44FEC812424500D008580C8 /* Encodable+JSON.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E44FEC3F24244405008580C8 /* Mappable */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC4024244423008580C8 /* Mappable.swift */,
+			);
+			path = Mappable;
+			sourceTree = "<group>";
+		};
+		E44FEC5524244901008580C8 /* NetworkingLast */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC7924244BA6008580C8 /* Model */,
+				E44FEC5624244901008580C8 /* TargetAPIs */,
+				E44FEC5D24244901008580C8 /* Managers */,
+				E44FEC6224244901008580C8 /* Network.swift */,
+				E44FEC6324244901008580C8 /* Request */,
+				E44FEC6824244901008580C8 /* MoyaPlugginOverride.swift */,
+				E44FEC6924244901008580C8 /* Services */,
+			);
+			path = NetworkingLast;
+			sourceTree = "<group>";
+		};
+		E44FEC5624244901008580C8 /* TargetAPIs */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC5724244901008580C8 /* Protocol */,
+				E44FEC5C24244901008580C8 /* API.swift */,
+			);
+			path = TargetAPIs;
+			sourceTree = "<group>";
+		};
+		E44FEC5724244901008580C8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC5824244901008580C8 /* RestAPI.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E44FEC5D24244901008580C8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC5E24244901008580C8 /* GlobalFigures */,
+				E44FEC6024244901008580C8 /* FiguresByCountry */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E44FEC5E24244901008580C8 /* GlobalFigures */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC5F24244901008580C8 /* GlobalFiguresService.swift */,
+			);
+			path = GlobalFigures;
+			sourceTree = "<group>";
+		};
+		E44FEC6024244901008580C8 /* FiguresByCountry */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC6124244901008580C8 /* FiguresByCountryService.swift */,
+			);
+			path = FiguresByCountry;
+			sourceTree = "<group>";
+		};
+		E44FEC6324244901008580C8 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC6424244901008580C8 /* Router */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E44FEC6424244901008580C8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC6524244901008580C8 /* RouterBase.swift */,
+				E44FEC6624244901008580C8 /* RouterURLs.swift */,
+				E44FEC6724244901008580C8 /* URLConstants.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E44FEC6924244901008580C8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC6A24244901008580C8 /* ServiceErrorCostants.swift */,
+				E44FEC6B24244901008580C8 /* HandlerNetworkError.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E44FEC7924244BA6008580C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC7A24244BA6008580C8 /* FiguresByCountry.swift */,
+				E44FEC7B24244BA6008580C8 /* GlobalFigures.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E44FEC7E24244FB2008580C8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E44FECCE24263401008580C8 /* UIColor+Extension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E44FEC8824257531008580C8 /* FiguresByCountry */ = {
+			isa = PBXGroup;
+			children = (
+				E44FECC924262D28008580C8 /* Views */,
+				E44FEC8924257ECC008580C8 /* Cells */,
+				E44FEC2424231EAA008580C8 /* FiguresInTheWorldViewController.swift */,
+				E44FEC2824231F6C008580C8 /* FiguresInTheWorldViewModel.swift */,
+			);
+			path = FiguresByCountry;
+			sourceTree = "<group>";
+		};
+		E44FEC8924257ECC008580C8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC8A24257F3D008580C8 /* CountryTableViewCell.swift */,
+				E44FEC8B24257F3D008580C8 /* CountryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E44FEC902425B613008580C8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E44FEC912425B62D008580C8 /* MapViewController.swift */,
+				E44FEC922425B62D008580C8 /* MapViewController.xib */,
+				E44FEC952425C19E008580C8 /* MapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		E44FEC9724262B7D008580C8 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				E44FECC724262CE1008580C8 /* Montserrat-Bold.ttf */,
+				E44FECBF24262C1E008580C8 /* Montserrat-Light.ttf */,
+				E44FECC224262C1F008580C8 /* Montserrat-Medium.ttf */,
+				E44FECC024262C1F008580C8 /* Montserrat-Regular.ttf */,
+				E44FECC124262C1F008580C8 /* Montserrat-SemiBold.ttf */,
+			);
+			path = CustomFonts;
+			sourceTree = "<group>";
+		};
+		E44FECC924262D28008580C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E44FECCA24262D6A008580C8 /* GlobalFigureTabView.swift */,
+				E44FECCC24262EF8008580C8 /* GlobalFigureTabView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EA520CD486C771E1987E9E07 /* Frameworks */ = {
@@ -292,6 +470,7 @@
 				E44FEBDE2423014F008580C8 /* Frameworks */,
 				E44FEBDF2423014F008580C8 /* Resources */,
 				D90857BD91FFF7FB7FA9A709 /* [CP] Embed Pods Frameworks */,
+				777E78251AE689554A40E457 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,6 +509,7 @@
 				E44FEBFF242301A1008580C8 /* Frameworks */,
 				E44FEC00242301A1008580C8 /* Resources */,
 				C532072833BAFC3B50015204 /* [CP] Embed Pods Frameworks */,
+				27B15A59D0E0A394D1454C52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -389,12 +569,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44FECC424262C1F008580C8 /* Montserrat-Regular.ttf in Resources */,
+				E44FEC8D24257F3D008580C8 /* CountryTableViewCell.xib in Resources */,
+				E44FEC8F24258ECB008580C8 /* Storyboard.storyboard in Resources */,
 				E44FEC352423C357008580C8 /* FigureView.xib in Resources */,
-				E44FEC2724231EAA008580C8 /* CoronavirusViewController.xib in Resources */,
+				E44FECC524262C1F008580C8 /* Montserrat-SemiBold.ttf in Resources */,
+				E44FECCD24262EF8008580C8 /* GlobalFigureTabView.xib in Resources */,
 				E44FEBF1242301A0008580C8 /* LaunchScreen.storyboard in Resources */,
+				E44FECC324262C1F008580C8 /* Montserrat-Light.ttf in Resources */,
+				E44FEC942425B62D008580C8 /* MapViewController.xib in Resources */,
+				E44FECC824262CE1008580C8 /* Montserrat-Bold.ttf in Resources */,
 				E44FEBEE242301A0008580C8 /* Preview Assets.xcassets in Resources */,
+				E44FECC624262C1F008580C8 /* Montserrat-Medium.ttf in Resources */,
 				E44FEBEB242301A0008580C8 /* Assets.xcassets in Resources */,
-				E44FEC302423BE8E008580C8 /* GlobalFiguresViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +602,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		27B15A59D0E0A394D1454C52 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp-CoronavirusAppUITests/Pods-CoronavirusApp-CoronavirusAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp-CoronavirusAppUITests/Pods-CoronavirusApp-CoronavirusAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp-CoronavirusAppUITests/Pods-CoronavirusApp-CoronavirusAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		777E78251AE689554A40E457 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp/Pods-CoronavirusApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp/Pods-CoronavirusApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp/Pods-CoronavirusApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C4A8725024EF61A3A377751B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -522,22 +743,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44FEC2024231943008580C8 /* GetFiguresByCountry.swift in Sources */,
+				E44FEC7424244901008580C8 /* RouterURLs.swift in Sources */,
 				E44FEC332423C347008580C8 /* FigureView.swift in Sources */,
+				E44FEC7224244901008580C8 /* Network.swift in Sources */,
+				E44FEC7324244901008580C8 /* RouterBase.swift in Sources */,
 				E44FEBE52423014F008580C8 /* AppDelegate.swift in Sources */,
+				E44FEC822424500D008580C8 /* Encodable+JSON.swift in Sources */,
 				E44FEBE72423014F008580C8 /* SceneDelegate.swift in Sources */,
-				E44FEC2924231F6C008580C8 /* CoronavirusViewModel.swift in Sources */,
-				E44FEC1624230B66008580C8 /* WebRequest.swift in Sources */,
-				E44FEC2624231EAA008580C8 /* CoronavirusViewController.swift in Sources */,
+				E44FEC2924231F6C008580C8 /* FiguresInTheWorldViewModel.swift in Sources */,
+				E44FECCF24263401008580C8 /* UIColor+Extension.swift in Sources */,
+				E44FEC7024244901008580C8 /* GlobalFiguresService.swift in Sources */,
+				E44FEC2624231EAA008580C8 /* FiguresInTheWorldViewController.swift in Sources */,
+				E44FEC7724244901008580C8 /* ServiceErrorCostants.swift in Sources */,
+				E44FEC7624244901008580C8 /* MoyaPlugginOverride.swift in Sources */,
+				E44FEC8C24257F3D008580C8 /* CountryTableViewCell.swift in Sources */,
+				E44FEC8024244FC7008580C8 /* AppConfiguration.swift in Sources */,
 				E44FEC372423C421008580C8 /* FigureViewModel.swift in Sources */,
-				E44FEC3E2423D950008580C8 /* GlobalFigures.swift in Sources */,
+				E44FEC4124244423008580C8 /* Mappable.swift in Sources */,
+				E44FEC7124244901008580C8 /* FiguresByCountryService.swift in Sources */,
+				E44FEC962425C19E008580C8 /* MapViewModel.swift in Sources */,
+				E44FEC7C24244BA6008580C8 /* FiguresByCountry.swift in Sources */,
+				E44FEC7824244901008580C8 /* HandlerNetworkError.swift in Sources */,
 				E44FEC392423C558008580C8 /* GlobalFiguresViewModel.swift in Sources */,
+				E44FEC6F24244901008580C8 /* API.swift in Sources */,
 				E44FEC2F2423BE8E008580C8 /* GlobalFiguresViewController.swift in Sources */,
+				E44FEC6C24244901008580C8 /* RestAPI.swift in Sources */,
 				E44FEBE92423014F008580C8 /* ContentView.swift in Sources */,
-				E44FEC1E24231797008580C8 /* GetGlobalFigures.swift in Sources */,
-				E44FEC2B24232250008580C8 /* Endpoint.swift in Sources */,
-				E44FEC1B242315AC008580C8 /* FiguresByCountry.swift in Sources */,
+				E44FEC7524244901008580C8 /* URLConstants.swift in Sources */,
+				E44FEC7D24244BA6008580C8 /* GlobalFigures.swift in Sources */,
+				E44FECCB24262D6A008580C8 /* GlobalFigureTabView.swift in Sources */,
 				E44FEC3C2423D092008580C8 /* UIViewExtension.swift in Sources */,
+				E44FEC932425B62D008580C8 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

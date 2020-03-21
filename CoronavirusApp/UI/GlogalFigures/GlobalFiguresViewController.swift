@@ -18,23 +18,25 @@ class GlobalFiguresViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         viewModel.getGlobalFigures { globalFigures in
-            guard let globalFigures = globalFigures else {
-                let mockDescription = GlobalFigures(confirmed: 214915,
-                                                    deaths: 8733,
-                                                    recoveries: 83313)
-                let mockFigures = GlobalStats(stats: mockDescription)
-                self.addStackViews(globalStats: mockFigures.stats)
-                return
-            }
-            self.addStackViews(globalStats: globalFigures.stats)
+            guard let globalStats = globalFigures?.stats else { return }
+            self.addStackViews(globalStats: globalStats)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        figuresAnimation()
     }
 
     private func addStackViews(globalStats: GlobalFigures) {
-        let maxFigure = max(globalStats.confirmed, globalStats.deaths, globalStats.recoveries)
-        setupFigureView(figure: globalStats.confirmed, description: "Confirmed", figureColor: .green, maxFigure: maxFigure)
-        setupFigureView(figure: globalStats.deaths, description: "Deaths", figureColor: .red, maxFigure: maxFigure)
-        setupFigureView(figure: globalStats.recoveries, description: "Recoveries", figureColor: .yellow, maxFigure: maxFigure)
+        guard let confirmedStats = Int(globalStats.confirmed!),
+            let deathStats = Int(globalStats.deaths!),
+            let recoveredStats = Int(globalStats.recovered!) else { return }
+        let maxFigure = max(confirmedStats, deathStats, recoveredStats)
+        setupFigureView(figure: confirmedStats, description: "Confirmed", figureColor: .green, maxFigure: maxFigure)
+        setupFigureView(figure: deathStats, description: "Deaths", figureColor: .red, maxFigure: maxFigure)
+        setupFigureView(figure: recoveredStats, description: "Recoveries", figureColor: .orange, maxFigure: maxFigure)
+        figuresAnimation()
     }
     
     private func setupFigureView(figure: Int, description: String, figureColor: UIColor, maxFigure: Int) {
@@ -48,4 +50,11 @@ class GlobalFiguresViewController: UIViewController {
         figuresStackView.addArrangedSubview(figureView)
     }
 
+    private func figuresAnimation() {
+        for view in figuresStackView.arrangedSubviews {
+            if let figureView = view as? FigureView {
+                figureView.figureAnimation()
+            }
+        }
+    }
 }

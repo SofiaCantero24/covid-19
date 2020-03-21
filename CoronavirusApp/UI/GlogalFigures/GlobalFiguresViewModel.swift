@@ -12,14 +12,14 @@ import UIKit
 class GlobalFiguresViewModel {
     var goblalFigures: GlobalStats?
     let colors: [UIColor] = [.green, .red, .yellow]
-
+    
     func getGlobalFigures(completion: @escaping (GlobalStats?) -> Void) {
-        GetGlobalFigures().execute(success: { goblalFigures in
-            self.goblalFigures = goblalFigures
-            completion(goblalFigures)
-        }) { error in
-            debugPrint(error)
-            completion(nil)
+        SAGlobalFiguresServiceResult.shared.getGlobalFigures(success: { [weak self] (response) in
+            print(response)
+            completion(response)
+            //self?.getFiguresByCountry()
+        }) { (error) in
+            print(error)
         }
     }
 }
