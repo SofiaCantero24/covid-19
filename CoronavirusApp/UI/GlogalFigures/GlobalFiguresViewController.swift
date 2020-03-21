@@ -10,6 +10,7 @@ import UIKit
 
 class GlobalFiguresViewController: UIViewController {
     @IBOutlet weak var figuresStackView: UIStackView!
+    @IBOutlet weak var contentView: UIView!
     
     let viewModel = GlobalFiguresViewModel()
     
@@ -21,6 +22,8 @@ class GlobalFiguresViewController: UIViewController {
             guard let globalStats = globalFigures?.stats else { return }
             self.addStackViews(globalStats: globalStats)
         }
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 20
     }
     
     override func viewDidAppear(_ animated: Bool) {

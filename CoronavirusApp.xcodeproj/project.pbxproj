@@ -56,6 +56,7 @@
 		E44FECCB24262D6A008580C8 /* GlobalFigureTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FECCA24262D6A008580C8 /* GlobalFigureTabView.swift */; };
 		E44FECCD24262EF8008580C8 /* GlobalFigureTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FECCC24262EF8008580C8 /* GlobalFigureTabView.xib */; };
 		E44FECCF24263401008580C8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FECCE24263401008580C8 /* UIColor+Extension.swift */; };
+		E44FECD124265AEA008580C8 /* NumberFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FECD024265AEA008580C8 /* NumberFormater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		E44FECCA24262D6A008580C8 /* GlobalFigureTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFigureTabView.swift; sourceTree = "<group>"; };
 		E44FECCC24262EF8008580C8 /* GlobalFigureTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlobalFigureTabView.xib; sourceTree = "<group>"; };
 		E44FECCE24263401008580C8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E44FECD024265AEA008580C8 /* NumberFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormater.swift; sourceTree = "<group>"; };
 		F7E271981E97F0BF2FDAA093 /* Pods-CoronavirusApp-CoronavirusAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronavirusApp-CoronavirusAppUITests.release.xcconfig"; path = "Target Support Files/Pods-CoronavirusApp-CoronavirusAppUITests/Pods-CoronavirusApp-CoronavirusAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FBDD07C87C8F6EADF22B7A18 /* Pods-CoronavirusAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronavirusAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CoronavirusAppTests/Pods-CoronavirusAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,11 +282,12 @@
 		E44FEC3A2423D07E008580C8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E44FEC7F24244FC7008580C8 /* AppConfiguration.swift */,
+				E44FECCE24263401008580C8 /* UIColor+Extension.swift */,
 				E44FEC9724262B7D008580C8 /* CustomFonts */,
 				E44FEC3F24244405008580C8 /* Mappable */,
 				E44FEC3B2423D092008580C8 /* UIViewExtension.swift */,
 				E44FEC812424500D008580C8 /* Encodable+JSON.swift */,
+				E44FECD024265AEA008580C8 /* NumberFormater.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -392,7 +395,7 @@
 		E44FEC7E24244FB2008580C8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E44FECCE24263401008580C8 /* UIColor+Extension.swift */,
+				E44FEC7F24244FC7008580C8 /* AppConfiguration.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				E44FEC392423C558008580C8 /* GlobalFiguresViewModel.swift in Sources */,
 				E44FEC6F24244901008580C8 /* API.swift in Sources */,
 				E44FEC2F2423BE8E008580C8 /* GlobalFiguresViewController.swift in Sources */,
+				E44FECD124265AEA008580C8 /* NumberFormater.swift in Sources */,
 				E44FEC6C24244901008580C8 /* RestAPI.swift in Sources */,
 				E44FEBE92423014F008580C8 /* ContentView.swift in Sources */,
 				E44FEC7524244901008580C8 /* URLConstants.swift in Sources */,

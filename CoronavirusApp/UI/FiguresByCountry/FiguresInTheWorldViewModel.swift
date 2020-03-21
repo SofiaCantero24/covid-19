@@ -13,7 +13,8 @@ class FiguresInTheWorldViewModel {
     
     func getFiguresByCountry(completion: @escaping () -> Void) {
          SAFiguresByCountryServiceResult.shared.getFiguresByCountry(success: { [weak self] (response) in
-            self?.coronavirusWorldFigures = response.data
+            self?.formatFigures(worldFigures: response.data)
+            self?.orderBy(tabType: .confirmed)
             completion()
              print(response)
          }) { (error) in
@@ -29,6 +30,39 @@ class FiguresInTheWorldViewModel {
             //self?.getFiguresByCountry()
         }) { (error) in
             print(error)
+        }
+    }
+    
+    func formatFigures(worldFigures: [FiguresByCountry]) {
+        coronavirusWorldFigures = worldFigures.map({ countryFigure in
+            guard let confirmed = Int(countryFigure.confirmed),
+                let death = Int(countryFigure.deaths),
+                let recovered = Int(countryFigure.recovered) else { return countryFigure }
+            return FiguresByCountry(idApi: countryFigure.idApi,
+                                    countryRegion: countryFigure.countryRegion,
+                                    lat: countryFigure.lat,
+                                    long: countryFigure.long,
+                                    confirmed: confirmed.formattedWithSeparator,
+                                    deaths: death.formattedWithSeparator,
+                                    recovered: recovered.formattedWithSeparator)
+        })
+    }
+    
+    func orderBy(tabType: TabType) {
+        coronavirusWorldFigures.sort { (last, current) -> Bool in
+            guard let lastConfirmed = Int(last.confirmed.stringWithoutGroupingSeparator), let currentConfirmed = Int(current.confirmed.stringWithoutGroupingSeparator),
+                let lastDeaths = Int(last.deaths.stringWithoutGroupingSeparator), let currentDeaths = Int(current.deaths.stringWithoutGroupingSeparator),
+                let lastRecovered = Int(last.recovered.stringWithoutGroupingSeparator), let currentRecovered = Int(current.recovered.stringWithoutGroupingSeparator) else {
+                    return false
+            }
+            switch tabType {
+            case .confirmed:
+                return lastConfirmed > currentConfirmed
+            case .deaths:
+                return lastDeaths > currentDeaths
+            case .recoveries:
+                return lastRecovered > currentRecovered
+            }
         }
     }
 }

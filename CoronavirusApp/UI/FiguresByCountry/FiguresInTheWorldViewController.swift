@@ -18,6 +18,8 @@ class FiguresInTheWorldViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var figuresStackView: UIStackView!
     @IBOutlet weak var figuresTableView: UITableView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var searchBarHeightConstraint: NSLayoutConstraint!
     
     var lastSelectedTab: TabType = .confirmed
     let viewModel = FiguresInTheWorldViewModel()
@@ -30,27 +32,42 @@ class FiguresInTheWorldViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 20
+        setupTabViews()
+        setupSearchView()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         figuresTableView.delegate = self
         figuresTableView.dataSource = self
         figuresTableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: "CountryTableViewCell")
-        viewModel.getGlobalFigures { globalStats in
-            guard let globalStats = globalStats?.stats else { return }
-            self.setupTabViews(withGlobalFigurez: globalStats )
-        }
         viewModel.getFiguresByCountry {
             self.figuresTableView.reloadData()
         }
-        setupSearchView()
     }
 
-    private func setupTabViews(withGlobalFigurez figures: GlobalFigures) {
-        guard let confirmedFigure = figures.confirmed,
-            let deathsFigure = figures.deaths,
-            let recoveredFigure = figures.recovered else { return }
-        createTabView(tabViewType: .confirmed, figure: confirmedFigure, selected: true, description: "Confirmed")
-        createTabView(tabViewType: .deaths, figure: deathsFigure, selected: false, description: "Deaths")
-        createTabView(tabViewType: .recoveries, figure: recoveredFigure, selected: false, description: "Recovered")
+    private func setupTabViews() {
+        viewModel.getGlobalFigures { globalStats in
+            guard let figures = globalStats?.stats else { return }
+            guard let confirmedFigure = Int(figures.confirmed ?? ""),
+                let deathsFigure = Int(figures.deaths ?? ""),
+                let recoveredFigure = Int(figures.recovered ?? "") else { return }
+            self.createTabView(tabViewType: .confirmed,
+                               figure: confirmedFigure.formattedWithSeparator,
+                               selected: true,
+                               description: "Confirmed")
+            self.createTabView(tabViewType: .deaths,
+                               figure: deathsFigure.formattedWithSeparator,
+                               selected: false,
+                               description: "Deaths")
+            self.createTabView(tabViewType: .recoveries,
+                               figure: recoveredFigure.formattedWithSeparator,
+                               selected: false,
+                               description: "Recovered")
+        }
     }
     
     private func createTabView(tabViewType: TabType, figure: String, selected: Bool, description: String) {
@@ -67,6 +84,7 @@ class FiguresInTheWorldViewController: UIViewController {
     
     private func setupSearchView() {
         searchBar.placeholder = "Search countries.."
+        searchBarHeightConstraint.constant = 0
     }
     
     @objc
@@ -80,6 +98,7 @@ class FiguresInTheWorldViewController: UIViewController {
                 selectedView.updateSelected()
                 lastSelectedView.updateSelected()
                 lastSelectedTab = TabType(rawValue: selectedViewTag) ?? .confirmed
+                viewModel.orderBy(tabType: lastSelectedTab)
             }
             figuresTableView.reloadData()
         }

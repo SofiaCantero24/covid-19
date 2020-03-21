@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="333" height="120"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEH-jm-cGc">
-                            <rect key="frame" x="138" y="28" width="57" height="24.5"/>
+                            <rect key="frame" x="138" y="38" width="57" height="24.5"/>
                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
                             <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
@@ -36,12 +36,22 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Ss-Ri3">
+                            <rect key="frame" x="0.0" y="119" width="333" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Knt-71-fej"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="SEH-jm-cGc" firstAttribute="centerY" secondItem="fcZ-Yd-RNQ" secondAttribute="centerY" constant="-20" id="5ls-tb-wJl"/>
+                        <constraint firstItem="SEH-jm-cGc" firstAttribute="centerY" secondItem="fcZ-Yd-RNQ" secondAttribute="centerY" constant="-10" id="5ls-tb-wJl"/>
                         <constraint firstAttribute="height" constant="120" id="Asx-O8-zj3"/>
                         <constraint firstItem="Uje-zf-QeO" firstAttribute="centerY" secondItem="fcZ-Yd-RNQ" secondAttribute="centerY" constant="20" id="Lql-gv-SGD"/>
+                        <constraint firstItem="M69-Ss-Ri3" firstAttribute="leading" secondItem="fcZ-Yd-RNQ" secondAttribute="leading" id="THV-IV-Ltw"/>
+                        <constraint firstAttribute="bottom" secondItem="M69-Ss-Ri3" secondAttribute="bottom" id="dzg-xd-toH"/>
+                        <constraint firstAttribute="trailing" secondItem="M69-Ss-Ri3" secondAttribute="trailing" id="eUc-mN-pJq"/>
                         <constraint firstItem="Uje-zf-QeO" firstAttribute="centerX" secondItem="fcZ-Yd-RNQ" secondAttribute="centerX" id="fHL-mD-olV"/>
                         <constraint firstItem="SEH-jm-cGc" firstAttribute="centerX" secondItem="fcZ-Yd-RNQ" secondAttribute="centerX" id="ply-MX-KFL"/>
                     </constraints>
@@ -59,6 +69,7 @@
             <connections>
                 <outlet property="figuresDescriptionLabel" destination="Uje-zf-QeO" id="pyc-qL-gRK"/>
                 <outlet property="figuresLabel" destination="SEH-jm-cGc" id="fwd-4x-M5w"/>
+                <outlet property="separatorView" destination="M69-Ss-Ri3" id="CRe-1x-pSk"/>
             </connections>
             <point key="canvasLocation" x="26.811594202898554" y="-113.16964285714285"/>
         </view>

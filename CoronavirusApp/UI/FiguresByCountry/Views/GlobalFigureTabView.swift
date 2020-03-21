@@ -11,6 +11,7 @@ import UIKit
 class GlobalFigureTabView: UIView {
     @IBOutlet weak var figuresLabel: UILabel!
     @IBOutlet weak var figuresDescriptionLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
     
     var selected: Bool = false
     
@@ -33,5 +34,6 @@ class GlobalFigureTabView: UIView {
         let color: UIColor = selected ? .selected : .deselected
         figuresLabel.textColor = color
         figuresDescriptionLabel.textColor = color
+        separatorView.backgroundColor = color
     }
 }
