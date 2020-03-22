@@ -14,26 +14,36 @@ enum TabType: Int {
     case recoveries = 2
 }
 
+struct Constants {
+    static let searchBarHeight: CGFloat = 60
+    static let imageInsets: CGFloat = 7
+    static let contentCornerRadious: CGFloat = 15
+}
+
 class FiguresInTheWorldViewController: UIViewController {
+    @IBOutlet weak var searchBarView: UIView!
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBarHeightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var figuresStackView: UIStackView!
     @IBOutlet weak var figuresTableView: UITableView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var searchBarHeightConstraint: NSLayoutConstraint!
     
     var lastSelectedTab: TabType = .confirmed
     let viewModel = FiguresInTheWorldViewModel()
-    
-    var isFiltering: Bool {
-        return searchBar.text?.isEmpty == false
-    }
+    var searchBarShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = Constants.contentCornerRadious
+        searchButton.imageEdgeInsets = UIEdgeInsets(top: Constants.imageInsets,
+                                                    left: Constants.imageInsets,
+                                                    bottom: Constants.imageInsets,
+                                                    right: Constants.imageInsets)
         setupTabViews()
         setupSearchView()
         setupTableView()
@@ -85,6 +95,7 @@ class FiguresInTheWorldViewController: UIViewController {
     private func setupSearchView() {
         searchBar.placeholder = "Search countries.."
         searchBarHeightConstraint.constant = 0
+        searchBar.delegate = self
     }
     
     @objc
@@ -103,8 +114,18 @@ class FiguresInTheWorldViewController: UIViewController {
             figuresTableView.reloadData()
         }
     }
+    
+    // MARK: - Actions
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3) {
+            self.searchBarHeightConstraint.constant = self.searchBarShown ? 0 : Constants.searchBarHeight
+            self.view.layoutIfNeeded()
+        }
+        searchBarShown = !searchBarShown
+    }
 }
 
+// MARK: - UITableViewDelegate
 extension FiguresInTheWorldViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let countryFigures = viewModel.coronavirusWorldFigures[indexPath.row]
@@ -117,17 +138,39 @@ extension FiguresInTheWorldViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension FiguresInTheWorldViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.coronavirusWorldFigures.count
+        return viewModel.currentFiguresList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell") as? CountryTableViewCell else {
             return UITableViewCell()
         }
-        let figuresList = viewModel.coronavirusWorldFigures
-        cell.setupCell(withData: figuresList[indexPath.row], andTabType: lastSelectedTab)
+        cell.setupCell(withData: viewModel.currentFiguresList[indexPath.row], andTabType: lastSelectedTab)
         return cell
     }
+}
+
+// MARK: - UISearchBarDelegate
+extension FiguresInTheWorldViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel.searchActive = true
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        viewModel.searchActive = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchActive = false
+        figuresTableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterFigures(byString: searchText)
+        figuresTableView.reloadData()
+    }
+
 }

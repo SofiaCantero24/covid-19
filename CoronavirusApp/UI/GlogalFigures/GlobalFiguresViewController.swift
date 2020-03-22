@@ -11,24 +11,36 @@ import UIKit
 class GlobalFiguresViewController: UIViewController {
     @IBOutlet weak var figuresStackView: UIStackView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     let viewModel = GlobalFiguresViewModel()
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        viewModel.getGlobalFigures { globalFigures in
-            guard let globalStats = globalFigures?.stats else { return }
-            self.addStackViews(globalStats: globalStats)
-        }
+        setupFiguresStackView()
         contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = Constants.contentCornerRadious
+        refreshButton.imageEdgeInsets = UIEdgeInsets(top: Constants.imageInsets,
+                                                     left: Constants.imageInsets,
+                                                     bottom: Constants.imageInsets,
+                                                     right: Constants.imageInsets)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         figuresAnimation()
+        refreshButtonAnimation()
+    }
+    
+    // MARK: - Private Methods
+    private func setupFiguresStackView() {
+        viewModel.getGlobalFigures { globalFigures in
+            guard let globalStats = globalFigures?.stats else { return }
+            self.addStackViews(globalStats: globalStats)
+        }
     }
 
     private func addStackViews(globalStats: GlobalFigures) {
@@ -59,5 +71,21 @@ class GlobalFiguresViewController: UIViewController {
                 figureView.figureAnimation()
             }
         }
+    }
+    
+    private func refreshButtonAnimation() {
+        UIView.animate(withDuration: 1, animations: {
+            self.refreshButton.transform = CGAffineTransform(rotationAngle: (180.0 * .pi) / 180.0)
+        })
+    }
+    
+    // MARK: - Actions
+    @IBAction func refreshButtonTapped(_ sender: UIButton) {
+        for view in figuresStackView.arrangedSubviews {
+            view.removeFromSuperview()
+        }
+        setupFiguresStackView()
+        figuresAnimation()
+        refreshButtonAnimation()
     }
 }

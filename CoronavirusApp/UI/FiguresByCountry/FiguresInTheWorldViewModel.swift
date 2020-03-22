@@ -10,26 +10,28 @@ import Foundation
 
 class FiguresInTheWorldViewModel {
     var coronavirusWorldFigures = [FiguresByCountry]()
+    var filteredFigures = [FiguresByCountry]()
+    var searchActive = false
+    
+    var currentFiguresList: [FiguresByCountry] {
+        return searchActive ? filteredFigures : coronavirusWorldFigures
+    }
     
     func getFiguresByCountry(completion: @escaping () -> Void) {
          SAFiguresByCountryServiceResult.shared.getFiguresByCountry(success: { [weak self] (response) in
             self?.formatFigures(worldFigures: response.data)
             self?.orderBy(tabType: .confirmed)
             completion()
-             print(response)
          }) { (error) in
             completion()
-             print(error)
          }
      }
     
     func getGlobalFigures(completion: @escaping (GlobalStats?) -> Void) {
         SAGlobalFiguresServiceResult.shared.getGlobalFigures(success: { [weak self] (response) in
-            print(response)
             completion(response)
-            //self?.getFiguresByCountry()
         }) { (error) in
-            print(error)
+            
         }
     }
     
@@ -50,9 +52,12 @@ class FiguresInTheWorldViewModel {
     
     func orderBy(tabType: TabType) {
         coronavirusWorldFigures.sort { (last, current) -> Bool in
-            guard let lastConfirmed = Int(last.confirmed.stringWithoutGroupingSeparator), let currentConfirmed = Int(current.confirmed.stringWithoutGroupingSeparator),
-                let lastDeaths = Int(last.deaths.stringWithoutGroupingSeparator), let currentDeaths = Int(current.deaths.stringWithoutGroupingSeparator),
-                let lastRecovered = Int(last.recovered.stringWithoutGroupingSeparator), let currentRecovered = Int(current.recovered.stringWithoutGroupingSeparator) else {
+            guard let lastConfirmed = Int(last.confirmed.stringWithoutGroupingSeparator),
+                let currentConfirmed = Int(current.confirmed.stringWithoutGroupingSeparator),
+                let lastDeaths = Int(last.deaths.stringWithoutGroupingSeparator),
+                let currentDeaths = Int(current.deaths.stringWithoutGroupingSeparator),
+                let lastRecovered = Int(last.recovered.stringWithoutGroupingSeparator),
+                let currentRecovered = Int(current.recovered.stringWithoutGroupingSeparator) else {
                     return false
             }
             switch tabType {
@@ -64,5 +69,15 @@ class FiguresInTheWorldViewModel {
                 return lastRecovered > currentRecovered
             }
         }
+    }
+    
+    func filterFigures(byString string: String) {
+        guard !string.isEmpty else {
+            filteredFigures = coronavirusWorldFigures
+            return
+        }
+        filteredFigures = coronavirusWorldFigures.filter({ figures -> Bool in
+            return figures.countryRegion.lowercased().contains(string.lowercased())
+        })
     }
 }

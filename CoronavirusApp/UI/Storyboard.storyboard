@@ -26,6 +26,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LS5-S4-fqi">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Covid - 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m4-Vh-S5N">
+                                        <rect key="frame" x="145.5" y="69" width="123.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global Figures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGM-95-Blr">
+                                        <rect key="frame" x="159.5" y="108" width="95" height="16"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTd-fX-lFO">
+                                        <rect key="frame" x="344" y="62.5" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Wif-d0-v7g"/>
+                                            <constraint firstAttribute="width" constant="44" id="iHa-3c-DuT"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="refresh-icon"/>
+                                        <connections>
+                                            <action selector="refreshButtonTapped:" destination="DgT-sq-DQS" eventType="touchUpInside" id="7h5-9g-4Xb"/>
+                                        </connections>
+                                    </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCr-Zy-Ipy">
                                         <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                         <subviews>
@@ -42,26 +66,16 @@
                                             <constraint firstAttribute="trailing" secondItem="QvU-vo-iXx" secondAttribute="trailing" id="iOX-E3-eYf"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Covid - 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m4-Vh-S5N">
-                                        <rect key="frame" x="145.5" y="69" width="123.5" height="31"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global Figures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGM-95-Blr">
-                                        <rect key="frame" x="159.5" y="108" width="95" height="16"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4941176471" green="0.18823529410000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="dTd-fX-lFO" firstAttribute="centerY" secondItem="7m4-Vh-S5N" secondAttribute="centerY" id="6aR-KR-AA9"/>
                                     <constraint firstItem="vGM-95-Blr" firstAttribute="top" secondItem="7m4-Vh-S5N" secondAttribute="bottom" constant="8" id="GB1-8e-8Y9"/>
                                     <constraint firstItem="WCr-Zy-Ipy" firstAttribute="leading" secondItem="LS5-S4-fqi" secondAttribute="leading" id="RD3-ES-eBK"/>
                                     <constraint firstAttribute="bottom" secondItem="WCr-Zy-Ipy" secondAttribute="bottom" constant="-20" id="Wkl-W4-7T4"/>
                                     <constraint firstAttribute="trailing" secondItem="WCr-Zy-Ipy" secondAttribute="trailing" id="Wwg-v5-0tN"/>
                                     <constraint firstItem="vGM-95-Blr" firstAttribute="centerX" secondItem="LS5-S4-fqi" secondAttribute="centerX" id="Wxa-3r-9oQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dTd-fX-lFO" secondAttribute="trailing" constant="26" id="nrP-JF-37u"/>
                                     <constraint firstItem="WCr-Zy-Ipy" firstAttribute="height" secondItem="LS5-S4-fqi" secondAttribute="height" multiplier="0.85" id="ri2-3u-ljX"/>
                                     <constraint firstItem="7m4-Vh-S5N" firstAttribute="centerX" secondItem="LS5-S4-fqi" secondAttribute="centerX" id="xJ9-pB-a7b"/>
                                     <constraint firstItem="WCr-Zy-Ipy" firstAttribute="top" secondItem="vGM-95-Blr" secondAttribute="bottom" constant="15" id="ygu-Wx-7pu"/>
@@ -81,6 +95,7 @@
                     <connections>
                         <outlet property="contentView" destination="WCr-Zy-Ipy" id="jW1-Mw-ShG"/>
                         <outlet property="figuresStackView" destination="QvU-vo-iXx" id="49a-ys-1iH"/>
+                        <outlet property="refreshButton" destination="dTd-fX-lFO" id="KER-JZ-8Se"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4v3-Ar-YNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -178,16 +193,30 @@
                                             <constraint firstAttribute="trailing" secondItem="zpx-GU-sSb" secondAttribute="trailing" id="sQB-fG-QUo"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzS-kU-oqm">
+                                        <rect key="frame" x="344" y="62.5" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="PgT-gX-QDU"/>
+                                            <constraint firstAttribute="height" constant="44" id="fQA-7Y-AC4"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="search-icon"/>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="8D2-NV-6mq" eventType="touchUpInside" id="eTk-8W-nlQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4941176471" green="0.18823529410000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="9dS-CX-3wc" firstAttribute="height" secondItem="0Cd-pl-JXw" secondAttribute="height" multiplier="0.85" id="0Pt-T1-Rg1"/>
                                     <constraint firstAttribute="trailing" secondItem="9dS-CX-3wc" secondAttribute="trailing" id="DDz-hP-8nG"/>
+                                    <constraint firstItem="RzS-kU-oqm" firstAttribute="centerY" secondItem="39v-uA-woU" secondAttribute="centerY" id="FXT-iM-Z83"/>
                                     <constraint firstItem="9dS-CX-3wc" firstAttribute="leading" secondItem="0Cd-pl-JXw" secondAttribute="leading" id="Lh4-vu-txn"/>
                                     <constraint firstItem="9dS-CX-3wc" firstAttribute="top" secondItem="csa-L9-nJU" secondAttribute="bottom" constant="15" id="REm-Ei-Oak"/>
                                     <constraint firstItem="39v-uA-woU" firstAttribute="centerX" secondItem="0Cd-pl-JXw" secondAttribute="centerX" id="UP2-vG-S6V"/>
                                     <constraint firstItem="csa-L9-nJU" firstAttribute="top" secondItem="39v-uA-woU" secondAttribute="bottom" constant="8" id="V0w-N5-9ST"/>
                                     <constraint firstAttribute="bottom" secondItem="9dS-CX-3wc" secondAttribute="bottom" constant="-20" id="XRd-zf-BXd"/>
+                                    <constraint firstAttribute="trailing" secondItem="RzS-kU-oqm" secondAttribute="trailing" constant="26" id="kfF-uh-XTV"/>
                                     <constraint firstItem="csa-L9-nJU" firstAttribute="centerX" secondItem="0Cd-pl-JXw" secondAttribute="centerX" id="u6H-xM-Y6j"/>
                                 </constraints>
                             </view>
@@ -208,6 +237,8 @@
                         <outlet property="figuresTableView" destination="hPv-mz-Az6" id="4on-sA-Ncl"/>
                         <outlet property="searchBar" destination="Q0x-Tt-t1f" id="43k-gq-Tv8"/>
                         <outlet property="searchBarHeightConstraint" destination="fn6-gB-wPe" id="iMG-zJ-5y4"/>
+                        <outlet property="searchBarView" destination="MEq-9s-LMR" id="Sz7-aS-xLf"/>
+                        <outlet property="searchButton" destination="RzS-kU-oqm" id="CUI-iv-zzG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwH-jF-Vti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,6 +266,8 @@
     </scenes>
     <resources>
         <image name="map-icon" width="30" height="30"/>
+        <image name="refresh-icon" width="44" height="44"/>
+        <image name="search-icon" width="44" height="44"/>
         <image name="world-icon" width="30" height="30"/>
     </resources>
 </document>

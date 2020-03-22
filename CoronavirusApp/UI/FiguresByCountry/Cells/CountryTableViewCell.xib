@@ -46,6 +46,7 @@
                             <constraint firstAttribute="trailing" secondItem="ctI-pe-juQ" secondAttribute="trailing" constant="16" id="K42-r7-YPn"/>
                             <constraint firstItem="8PU-h8-isC" firstAttribute="leading" secondItem="hDt-o0-YNM" secondAttribute="leading" constant="16" id="UA5-Wq-nJD"/>
                             <constraint firstItem="8PU-h8-isC" firstAttribute="centerY" secondItem="hDt-o0-YNM" secondAttribute="centerY" id="iVf-rV-f3z"/>
+                            <constraint firstAttribute="height" constant="64" id="uLJ-XC-v7P"/>
                         </constraints>
                     </view>
                 </subviews>
