@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - EFCountingLabel (5.1.1)
   - GoogleMaps (3.8.0):
     - GoogleMaps/Maps (= 3.8.0)
   - GoogleMaps/Base (3.8.0)
@@ -17,6 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
+  - EFCountingLabel
   - GoogleMaps
   - Moya (~> 13.0.1)
   - PKHUD
@@ -26,6 +28,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - EFCountingLabel
     - GoogleMaps
     - Moya
     - PKHUD
@@ -35,6 +38,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  EFCountingLabel: 605358591a67a3c92feb7ec32486bfab4a30e2c9
   GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
@@ -42,6 +46,6 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 7c7464a4bf5706b20175ddda8218e347320687f2
+PODFILE CHECKSUM: cdbc6c1d4698d907c43b775c5bbfc19f00512dc5
 
 COCOAPODS: 1.9.1

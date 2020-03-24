@@ -12,39 +12,47 @@ import GoogleMaps
 class MapViewController: UIViewController {
     @IBOutlet weak var countryMap: UIView!
     
-    var viewModel: MapViewModel
-    
-    init(viewModel: MapViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: MapViewController.className, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var locationManager = CLLocationManager()
+    let viewModel = MapViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupMap()
+        viewModel.getCountryLocationArray { countryLocations in
+            guard let countryLocations = countryLocations else { return }
+            self.setupMap(withLocationMarker: countryLocations)
+        }
     }
 
-    func setupMap() {
-        
-        let camera = GMSCameraPosition.camera(withLatitude: viewModel.latitude, longitude: viewModel.longitude, zoom: 6.0)
+    func setupMap(withLocationMarker locationMarkers: [CountryLocation]) {
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 3.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
+        mapView.settings.zoomGestures = true
+        mapView.delegate = self
+        
+        setupMarkers(locationMarkers, inMap: mapView)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setupMarkers(_ locationMarkers: [CountryLocation], inMap map: GMSMapView) {
+        for location in locationMarkers {
+            let iconView = MarkerView(frame: CGRect(x: 0, y: 0,
+                                                    width: location.markerSize,
+                                                    height: location.markerSize),
+                                      id: location.id)
+            iconView.setupMarkerView()
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: location.lat, longitude: location.long)
+            marker.title = "Sydney"
+            marker.snippet = "Australia"
+            marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+            marker.iconView = iconView
+            marker.map = map
+        }
     }
-    */
+}
 
+extension MapViewController: GMSMapViewDelegate {
+    
 }

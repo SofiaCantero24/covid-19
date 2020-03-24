@@ -23,17 +23,23 @@ class GlobalFigureTabView: UIView {
     
     func setupTabView(tabViewType: TabType, figure: String, selected: Bool, description: String) {
         self.selected = selected
-        figuresLabel.text = figure
-        figuresDescriptionLabel.text = description
-        setupColor()
         tag = tabViewType.rawValue
+        setupColor()
+        setupLabels(WithFigure: figure, andDescription: description)
     }
     
     // MARK: - Private Methods
     private func setupColor() {
-        let color: UIColor = selected ? .selected : .deselected
+        let color: UIColor = selected ? .selected : .lightGray
         figuresLabel.textColor = color
         figuresDescriptionLabel.textColor = color
         separatorView.backgroundColor = color
+    }
+    
+    private func setupLabels(WithFigure figure: String, andDescription description: String) {
+        figuresLabel.text = figure
+        figuresDescriptionLabel.text = description
+        figuresLabel.font = .montserratSemiBold20
+        figuresDescriptionLabel.font = .montserratMedium17
     }
 }

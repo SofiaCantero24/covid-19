@@ -17,7 +17,7 @@ enum TabType: Int {
 struct Constants {
     static let searchBarHeight: CGFloat = 60
     static let imageInsets: CGFloat = 7
-    static let contentCornerRadious: CGFloat = 15
+    static let contentCornerRadious: CGFloat = 25
 }
 
 class FiguresInTheWorldViewController: UIViewController {
@@ -29,6 +29,9 @@ class FiguresInTheWorldViewController: UIViewController {
     @IBOutlet weak var figuresStackView: UIStackView!
     @IBOutlet weak var figuresTableView: UITableView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     var lastSelectedTab: TabType = .confirmed
     let viewModel = FiguresInTheWorldViewModel()
@@ -44,9 +47,19 @@ class FiguresInTheWorldViewController: UIViewController {
                                                     left: Constants.imageInsets,
                                                     bottom: Constants.imageInsets,
                                                     right: Constants.imageInsets)
+        setupBackgoundView()
         setupTabViews()
         setupSearchView()
         setupTableView()
+    }
+    
+    private func setupBackgoundView() {
+        backgroundView.backgroundColor = .selected
+        titleLabel.text = "COVID-19"
+        subtitleLabel.text = "Search figures by country"
+        titleLabel.textColor = .white
+        subtitleLabel.textColor = .white
+        searchButton.tintColor = .white
     }
     
     private func setupTableView() {
@@ -127,15 +140,15 @@ class FiguresInTheWorldViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension FiguresInTheWorldViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let countryFigures = viewModel.coronavirusWorldFigures[indexPath.row]
-        let mapViewModel = MapViewModel(latitude: countryFigures.lat, longitude: countryFigures.long)
-        let mapViewController = MapViewController(viewModel: mapViewModel)
-        
-        let navigationController = UINavigationController(rootViewController: mapViewController)
-        navigationController.modalPresentationStyle = UIModalPresentationStyle.popover
-        present(navigationController, animated: true, completion: nil)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let countryFigures = viewModel.coronavirusWorldFigures[indexPath.row]
+//        let mapViewModel = MapViewModel(latitude: countryFigures.lat, longitude: countryFigures.long)
+//        let mapViewController = MapViewController(viewModel: mapViewModel)
+//        
+//        let navigationController = UINavigationController(rootViewController: mapViewController)
+//        navigationController.modalPresentationStyle = UIModalPresentationStyle.popover
+//        present(navigationController, animated: true, completion: nil)
+//    }
 }
 
 // MARK: - UITableViewDataSource
@@ -151,6 +164,7 @@ extension FiguresInTheWorldViewController: UITableViewDataSource {
         cell.setupCell(withData: viewModel.currentFiguresList[indexPath.row], andTabType: lastSelectedTab)
         return cell
     }
+    
 }
 
 // MARK: - UISearchBarDelegate

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIStoryboard(name: "Storyboard", bundle: nil).instantiateViewController(withIdentifier: "tabBar") as UIViewController
+            window.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBar") as UIViewController
             self.window = window
             window.makeKeyAndVisible()
         }

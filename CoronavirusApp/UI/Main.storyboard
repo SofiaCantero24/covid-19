@@ -13,9 +13,28 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--Global Figures View Controller-->
+        <!--Mapa-->
+        <scene sceneID="B03-Od-xNh">
+            <objects>
+                <viewController id="2uj-Hi-jlC" customClass="MapViewController" customModule="CoronavirusApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wJO-43-3ry">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JGa-D5-sux"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="map-icon" id="rns-Ap-y75"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vIU-UM-Yo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714" y="412"/>
+        </scene>
+        <!--Global-->
         <scene sceneID="6r8-9g-sZP">
             <objects>
                 <viewController id="DgT-sq-DQS" customClass="GlobalFiguresViewController" customModule="CoronavirusApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +86,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.4941176471" green="0.18823529410000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.98045569659999998" green="0.98022907969999995" blue="0.98823708300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="dTd-fX-lFO" firstAttribute="centerY" secondItem="7m4-Vh-S5N" secondAttribute="centerY" id="6aR-KR-AA9"/>
                                     <constraint firstItem="vGM-95-Blr" firstAttribute="top" secondItem="7m4-Vh-S5N" secondAttribute="bottom" constant="8" id="GB1-8e-8Y9"/>
@@ -91,18 +110,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aAO-Pb-FUj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="world-icon" id="k0q-2o-1GB"/>
+                    <tabBarItem key="tabBarItem" title="Global" image="world-icon" id="k0q-2o-1GB"/>
                     <connections>
+                        <outlet property="backgroundView" destination="LS5-S4-fqi" id="B9F-wO-yo6"/>
                         <outlet property="contentView" destination="WCr-Zy-Ipy" id="jW1-Mw-ShG"/>
                         <outlet property="figuresStackView" destination="QvU-vo-iXx" id="49a-ys-1iH"/>
                         <outlet property="refreshButton" destination="dTd-fX-lFO" id="KER-JZ-8Se"/>
+                        <outlet property="subtitleLabel" destination="vGM-95-Blr" id="OEU-o4-7hj"/>
+                        <outlet property="titleLabel" destination="7m4-Vh-S5N" id="Ddw-ld-D54"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4v3-Ar-YNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="204" y="-78"/>
         </scene>
-        <!--Figures In The World View Controller-->
+        <!--Paises-->
         <scene sceneID="bGy-Nc-YA6">
             <objects>
                 <viewController id="8D2-NV-6mq" customClass="FiguresInTheWorldViewController" customModule="CoronavirusApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,8 +136,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Covid - 19" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39v-uA-woU">
-                                        <rect key="frame" x="145.5" y="69" width="123.5" height="31"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
+                                        <rect key="frame" x="146.5" y="69" width="121" height="31"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -164,7 +186,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GuD-Lg-WH3" userLabel="Table View">
                                                 <rect key="frame" x="0.0" y="155" width="414" height="519"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-mz-Az6">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-mz-Az6">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="519"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </tableView>
@@ -206,7 +228,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.4941176471" green="0.18823529410000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.86007982490000001" green="0.41909199949999998" blue="0.1842212379" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="9dS-CX-3wc" firstAttribute="height" secondItem="0Cd-pl-JXw" secondAttribute="height" multiplier="0.85" id="0Pt-T1-Rg1"/>
                                     <constraint firstAttribute="trailing" secondItem="9dS-CX-3wc" secondAttribute="trailing" id="DDz-hP-8nG"/>
@@ -230,8 +252,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oyV-Vh-I8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="map-icon" id="U8p-pW-FDh"/>
+                    <tabBarItem key="tabBarItem" title="Paises" image="world-list-icon" id="U8p-pW-FDh"/>
                     <connections>
+                        <outlet property="backgroundView" destination="0Cd-pl-JXw" id="WXX-D7-Une"/>
                         <outlet property="contentView" destination="9dS-CX-3wc" id="506-7L-X3N"/>
                         <outlet property="figuresStackView" destination="u0u-rc-NXl" id="f1t-ai-XS1"/>
                         <outlet property="figuresTableView" destination="hPv-mz-Az6" id="4on-sA-Ncl"/>
@@ -239,6 +262,8 @@
                         <outlet property="searchBarHeightConstraint" destination="fn6-gB-wPe" id="iMG-zJ-5y4"/>
                         <outlet property="searchBarView" destination="MEq-9s-LMR" id="Sz7-aS-xLf"/>
                         <outlet property="searchButton" destination="RzS-kU-oqm" id="CUI-iv-zzG"/>
+                        <outlet property="subtitleLabel" destination="csa-L9-nJU" id="qv3-Dd-3TK"/>
+                        <outlet property="titleLabel" destination="39v-uA-woU" id="To5-cH-SRv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwH-jF-Vti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -257,6 +282,7 @@
                     <connections>
                         <segue destination="8D2-NV-6mq" kind="relationship" relationship="viewControllers" id="NCB-ig-ui5"/>
                         <segue destination="DgT-sq-DQS" kind="relationship" relationship="viewControllers" id="L2X-ML-pRB"/>
+                        <segue destination="2uj-Hi-jlC" kind="relationship" relationship="viewControllers" id="dHq-ah-Q7J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSL-aM-gah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -265,9 +291,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="map-icon" width="30" height="30"/>
+        <image name="map-icon" width="24" height="24"/>
         <image name="refresh-icon" width="44" height="44"/>
         <image name="search-icon" width="44" height="44"/>
         <image name="world-icon" width="30" height="30"/>
+        <image name="world-list-icon" width="24" height="24"/>
     </resources>
 </document>

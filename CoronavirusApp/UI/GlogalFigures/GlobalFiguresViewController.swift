@@ -9,9 +9,12 @@
 import UIKit
 
 class GlobalFiguresViewController: UIViewController {
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var figuresStackView: UIStackView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     let viewModel = GlobalFiguresViewModel()
     
@@ -20,6 +23,7 @@ class GlobalFiguresViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupBackgroundView()
         setupFiguresStackView()
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = Constants.contentCornerRadious
@@ -36,6 +40,14 @@ class GlobalFiguresViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    private func setupBackgroundView() {
+        backgroundView.backgroundColor = .selected
+        titleLabel.text = "COVID-19"
+        subtitleLabel.text = "Global Figures"
+        titleLabel.textColor = .white
+        subtitleLabel.textColor = .white
+    }
+    
     private func setupFiguresStackView() {
         viewModel.getGlobalFigures { globalFigures in
             guard let globalStats = globalFigures?.stats else { return }

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import EFCountingLabel
 
 class FigureView: UIView {
-    @IBOutlet weak var figureLabel: UILabel!
+    @IBOutlet weak var figureLabel: EFCountingLabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
     var viewModel: FigureViewModel!
@@ -23,26 +24,16 @@ class FigureView: UIView {
         figureLabel.textColor = viewModel.figureColor
         descriptionLabel.text = viewModel.description.description
         descriptionLabel.textColor = viewModel.figureColor
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = ","
+        figureLabel.setUpdateBlock { value, label in
+            label.text = formatter.string(from: NSNumber(value: Int(value))) ?? ""
+        }
+        figureLabel.counter.timingFunction = EFTimingFunction.easeOut(easingRate: 3)
     }
     
     func figureAnimation() {
-        displayLink = CADisplayLink(target: self, selector: #selector(handleUpdate))
-        displayLink?.add(to: .main, forMode: .default)
-    }
-    
-    @objc
-    func handleUpdate() {
-        let now = Date()
-        let elapsedTime = now.timeIntervalSince(animationStartDate)
-        if elapsedTime > animationDuration {
-            figureLabel.text = "\(viewModel.figure)"
-            displayLink?.isPaused = true
-            displayLink?.invalidate()
-            displayLink = nil
-        } else {
-            let percentage = elapsedTime / animationDuration
-            let value = Int(percentage * Double(viewModel.figure))
-            figureLabel.text = "\(value)"
-        }
+        figureLabel.countFromZeroTo(CGFloat(viewModel.figure))
     }
 }

@@ -3,7 +3,6 @@ platform :ios, '11.0'
 
 target 'CoronavirusApp' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
 
   # Pods for CoronavirusApp
   pod 'Alamofire', '~> 4.8.2'
@@ -12,6 +11,7 @@ target 'CoronavirusApp' do
   pod 'PKHUD'
   pod 'RAMAnimatedTabBarController'
   pod 'GoogleMaps'
+  pod 'EFCountingLabel'
   target 'CoronavirusAppTests' do
     inherit! :search_paths
     # Pods for testing

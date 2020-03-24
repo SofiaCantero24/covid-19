@@ -11,8 +11,12 @@ import UIKit
 class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var figuresLabel: UILabel!
+    @IBOutlet weak var contentViewCell: UIView!
     
+    // MARK: - Public Methods
     func setupCell(withData data: FiguresByCountry, andTabType tabType: TabType) {
+        setupContentViewCell()
+        setupLabels()
         countryNameLabel.text = data.countryRegion
         switch tabType {
         case .confirmed:
@@ -25,10 +29,17 @@ class CountryTableViewCell: UITableViewCell {
         
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // MARK: - Private Methods
+    private func setupContentViewCell() {
+        contentViewCell.clipsToBounds = true
+        contentViewCell.layer.cornerRadius = Constants.contentCornerRadious
+        contentViewCell.backgroundColor = .lightShadow
     }
     
+    private func setupLabels() {
+        countryNameLabel.font = .montserratMedium15
+        figuresLabel.font = .montserratMedium15
+        countryNameLabel.textColor = .darkGray
+        figuresLabel.textColor = .darkGray
+    }
 }
