@@ -39,13 +39,12 @@ class MapViewController: UIViewController {
         for location in locationMarkers {
             let iconView = MarkerView(frame: CGRect(x: 0, y: 0,
                                                     width: location.markerSize,
-                                                    height: location.markerSize),
-                                      id: location.id)
+                                                    height: location.markerSize))
             iconView.setupMarkerView()
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: location.lat, longitude: location.long)
-            marker.title = "Sydney"
-            marker.snippet = "Australia"
+            marker.title = location.countryName
+            marker.snippet = location.confirmedCases
             marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             marker.iconView = iconView
             marker.map = map

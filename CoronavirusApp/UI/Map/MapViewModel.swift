@@ -12,8 +12,9 @@ import UIKit
 struct CountryLocation {
     let lat: Double
     let long: Double
-    let id: String
     let markerSize: CGFloat
+    let countryName: String
+    let confirmedCases: String
 }
 
 class MapViewModel {
@@ -30,10 +31,20 @@ class MapViewModel {
         let greatestValue = greatestConfirmedValue(fromFigures: array)
         return array.map { figure in
             let size = calculateMarkerSize(withValue: figure.confirmed, greatestValue: greatestValue)
-            guard let lat = Double(figure.lat), let long = Double(figure.long) else {
-                return CountryLocation(lat: 0, long: 0, id: figure.idApi, markerSize: size)
+            guard let lat = Double(figure.lat),
+                let long = Double(figure.long),
+                let confirmedCases = Int(figure.confirmed) else {
+                return CountryLocation(lat: 0,
+                                       long: 0,
+                                       markerSize: size,
+                                       countryName: figure.countryRegion,
+                                       confirmedCases: "Hay \(figure.confirmed) casos confirmados")
             }
-            return CountryLocation(lat: lat, long: long, id: figure.idApi, markerSize: size)
+            return CountryLocation(lat: lat,
+                                   long: long,
+                                   markerSize: size,
+                                   countryName: figure.countryRegion,
+                                   confirmedCases: "Hay \(confirmedCases.formattedWithSeparator) casos confirmados")
         }
     }
     
@@ -48,8 +59,8 @@ class MapViewModel {
     
     private func calculateMarkerSize(withValue value: String, greatestValue: Int) -> CGFloat {
         let confirmedValue = Int(value) ?? 0
-        let calculatedSize = confirmedValue * 150 / greatestValue
-        let finalSize = calculatedSize < 20 ? ( calculatedSize <= 1 ? 20 : 5 * calculatedSize ) : calculatedSize
-        return CGFloat(finalSize)
+        let percentageSize = confirmedValue * 150 / greatestValue
+        let finalSize = max(CGFloat(percentageSize), CGFloat(20))
+        return min(CGFloat(finalSize), CGFloat(150))
     }
 }

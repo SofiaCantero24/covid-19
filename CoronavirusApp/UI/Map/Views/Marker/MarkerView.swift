@@ -9,10 +9,7 @@
 import UIKit
 
 class MarkerView: UIView {
-    var id: String
-    
-    init(frame: CGRect, id: String) {
-        self.id = id
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupMarkerView()
     }

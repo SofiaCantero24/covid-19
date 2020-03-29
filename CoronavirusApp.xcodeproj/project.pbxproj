@@ -216,17 +216,9 @@
 		E420EAF4242797870053F54E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E420EAF52427982A0053F54E /* CountryInfo */,
 				E420EAED24278EF50053F54E /* Marker */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		E420EAF52427982A0053F54E /* CountryInfo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CountryInfo;
 			sourceTree = "<group>";
 		};
 		E44FEBD82423014F008580C8 = {
