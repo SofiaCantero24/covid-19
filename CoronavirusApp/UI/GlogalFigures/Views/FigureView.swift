@@ -20,6 +20,8 @@ class FigureView: UIView {
     var displayLink: CADisplayLink?
 
     func setupViewLabels() {
+        clipsToBounds = true
+        layer.cornerRadius = 25
         figureLabel.text = "\(0)"
         figureLabel.textColor = viewModel.figureColor
         descriptionLabel.text = viewModel.description.description

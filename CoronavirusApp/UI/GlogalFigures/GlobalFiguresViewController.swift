@@ -25,8 +25,6 @@ class GlobalFiguresViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupBackgroundView()
         setupFiguresStackView()
-        contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = Constants.contentCornerRadious
         refreshButton.imageEdgeInsets = UIEdgeInsets(top: Constants.imageInsets,
                                                      left: Constants.imageInsets,
                                                      bottom: Constants.imageInsets,
@@ -41,6 +39,7 @@ class GlobalFiguresViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupBackgroundView() {
+        contentView.backgroundColor = .selected
         backgroundView.backgroundColor = .selected
         titleLabel.text = "COVID-19"
         subtitleLabel.text = "Global Figures"

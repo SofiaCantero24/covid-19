@@ -12,6 +12,8 @@
 		E420EAEA2426FA970053F54E /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E420EAE72426FA0B0053F54E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E420EAEC242782000053F54E /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420EAEB242782000053F54E /* UIFont+Extension.swift */; };
 		E420EAF124278FD40053F54E /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420EAF024278FD40053F54E /* MarkerView.swift */; };
+		E420EAF8242ABCF50053F54E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420EAF7242ABCF50053F54E /* TabBarViewController.swift */; };
+		E420EAFA242AF4F40053F54E /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420EAF9242AF4F40053F54E /* LaunchViewController.swift */; };
 		E44FEBE52423014F008580C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEBE42423014F008580C8 /* AppDelegate.swift */; };
 		E44FEBE72423014F008580C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEBE62423014F008580C8 /* SceneDelegate.swift */; };
 		E44FEBE92423014F008580C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEBE82423014F008580C8 /* ContentView.swift */; };
@@ -105,6 +107,8 @@
 		E420EAE72426FA0B0053F54E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E420EAEB242782000053F54E /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		E420EAF024278FD40053F54E /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
+		E420EAF7242ABCF50053F54E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E420EAF9242AF4F40053F54E /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E44FEBE12423014F008580C8 /* CoronavirusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronavirusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44FEBE42423014F008580C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E44FEBE62423014F008580C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				E44FEBE82423014F008580C8 /* ContentView.swift */,
 				E44FEBEA242301A0008580C8 /* Assets.xcassets */,
 				E44FEBEF242301A0008580C8 /* LaunchScreen.storyboard */,
+				E420EAF9242AF4F40053F54E /* LaunchViewController.swift */,
 				E44FEBF2242301A0008580C8 /* Info.plist */,
 				E44FEBEC242301A0008580C8 /* Preview Content */,
 			);
@@ -294,6 +299,7 @@
 		E44FEC2324231DBA008580C8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E420EAF7242ABCF50053F54E /* TabBarViewController.swift */,
 				E44FEC8E24258ECB008580C8 /* Main.storyboard */,
 				E44FEC902425B613008580C8 /* Map */,
 				E44FEC8824257531008580C8 /* FiguresByCountry */,
@@ -764,6 +770,7 @@
 				E44FEBE52423014F008580C8 /* AppDelegate.swift in Sources */,
 				E44FEC822424500D008580C8 /* Encodable+JSON.swift in Sources */,
 				E44FEBE72423014F008580C8 /* SceneDelegate.swift in Sources */,
+				E420EAFA242AF4F40053F54E /* LaunchViewController.swift in Sources */,
 				E44FEC2924231F6C008580C8 /* FiguresInTheWorldViewModel.swift in Sources */,
 				E44FECCF24263401008580C8 /* UIColor+Extension.swift in Sources */,
 				E44FEC7024244901008580C8 /* GlobalFiguresService.swift in Sources */,
@@ -775,6 +782,7 @@
 				E44FEC8024244FC7008580C8 /* AppConfiguration.swift in Sources */,
 				E44FEC372423C421008580C8 /* FigureViewModel.swift in Sources */,
 				E44FEC4124244423008580C8 /* Mappable.swift in Sources */,
+				E420EAF8242ABCF50053F54E /* TabBarViewController.swift in Sources */,
 				E44FEC7124244901008580C8 /* FiguresByCountryService.swift in Sources */,
 				E44FEC962425C19E008580C8 /* MapViewModel.swift in Sources */,
 				E44FEC7C24244BA6008580C8 /* FiguresByCountry.swift in Sources */,

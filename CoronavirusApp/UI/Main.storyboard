@@ -28,7 +28,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JGa-D5-sux"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="map-icon" id="rns-Ap-y75"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="map-icon" id="rns-Ap-y75" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIU-UM-Yo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,17 +72,19 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCr-Zy-Ipy">
                                         <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QvU-vo-iXx">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QvU-vo-iXx">
+                                                <rect key="frame" x="20" y="0.0" width="374" height="400"/>
                                                 <color key="backgroundColor" red="0.49411764705882355" green="0.18823529411764706" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="Bp3-sI-ZXe"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="QvU-vo-iXx" firstAttribute="top" secondItem="WCr-Zy-Ipy" secondAttribute="top" id="CLe-YF-ZH9"/>
-                                            <constraint firstItem="QvU-vo-iXx" firstAttribute="leading" secondItem="WCr-Zy-Ipy" secondAttribute="leading" id="Dua-cY-uT2"/>
-                                            <constraint firstAttribute="bottom" secondItem="QvU-vo-iXx" secondAttribute="bottom" id="dax-ne-8jN"/>
-                                            <constraint firstAttribute="trailing" secondItem="QvU-vo-iXx" secondAttribute="trailing" id="iOX-E3-eYf"/>
+                                            <constraint firstItem="QvU-vo-iXx" firstAttribute="leading" secondItem="WCr-Zy-Ipy" secondAttribute="leading" constant="20" id="Dua-cY-uT2"/>
+                                            <constraint firstAttribute="trailing" secondItem="QvU-vo-iXx" secondAttribute="trailing" constant="20" id="iOX-E3-eYf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -101,7 +103,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.4941176471" green="0.18823529410000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="aAO-Pb-FUj" firstAttribute="bottom" secondItem="LS5-S4-fqi" secondAttribute="bottom" constant="20" id="10U-T9-y3q"/>
                             <constraint firstItem="LS5-S4-fqi" firstAttribute="leading" secondItem="aAO-Pb-FUj" secondAttribute="leading" id="2Hu-gT-Qrx"/>
@@ -110,7 +112,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aAO-Pb-FUj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Global" image="world-icon" id="k0q-2o-1GB"/>
+                    <tabBarItem key="tabBarItem" title="Global" image="world-icon" id="k0q-2o-1GB" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <connections>
                         <outlet property="backgroundView" destination="LS5-S4-fqi" id="B9F-wO-yo6"/>
                         <outlet property="contentView" destination="WCr-Zy-Ipy" id="jW1-Mw-ShG"/>
@@ -122,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4v3-Ar-YNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="-78"/>
+            <point key="canvasLocation" x="202.89855072463769" y="-78.348214285714278"/>
         </scene>
         <!--Paises-->
         <scene sceneID="bGy-Nc-YA6">
@@ -228,7 +230,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86007982490000001" green="0.41909199949999998" blue="0.1842212379" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.4941176471" green="0.18823529410000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="9dS-CX-3wc" firstAttribute="height" secondItem="0Cd-pl-JXw" secondAttribute="height" multiplier="0.85" id="0Pt-T1-Rg1"/>
                                     <constraint firstAttribute="trailing" secondItem="9dS-CX-3wc" secondAttribute="trailing" id="DDz-hP-8nG"/>
@@ -252,7 +254,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oyV-Vh-I8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Paises" image="world-list-icon" id="U8p-pW-FDh"/>
+                    <tabBarItem key="tabBarItem" title="Paises" image="world-list-icon" id="U8p-pW-FDh" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <connections>
                         <outlet property="backgroundView" destination="0Cd-pl-JXw" id="WXX-D7-Une"/>
                         <outlet property="contentView" destination="9dS-CX-3wc" id="506-7L-X3N"/>
@@ -268,12 +270,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwH-jF-Vti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202.89855072463769" y="-727.23214285714278"/>
+            <point key="canvasLocation" x="225" y="-755"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="8KK-LP-g0e">
             <objects>
-                <tabBarController storyboardIdentifier="tabBar" id="uPt-27-s2n" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="uPt-27-s2n" customClass="TabBarViewController" customModule="CoronavirusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ddC-BA-3fv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -294,7 +296,7 @@
         <image name="map-icon" width="24" height="24"/>
         <image name="refresh-icon" width="44" height="44"/>
         <image name="search-icon" width="44" height="44"/>
-        <image name="world-icon" width="30" height="30"/>
+        <image name="world-icon" width="24" height="24"/>
         <image name="world-list-icon" width="24" height="24"/>
     </resources>
 </document>

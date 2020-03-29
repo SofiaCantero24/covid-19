@@ -47,6 +47,9 @@ class FiguresInTheWorldViewController: UIViewController {
                                                     left: Constants.imageInsets,
                                                     bottom: Constants.imageInsets,
                                                     right: Constants.imageInsets)
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         setupBackgoundView()
         setupTabViews()
         setupSearchView()
@@ -63,7 +66,6 @@ class FiguresInTheWorldViewController: UIViewController {
     }
     
     private func setupTableView() {
-        figuresTableView.delegate = self
         figuresTableView.dataSource = self
         figuresTableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: "CountryTableViewCell")
@@ -135,20 +137,8 @@ class FiguresInTheWorldViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
         searchBarShown = !searchBarShown
+        figuresTableView.reloadData()
     }
-}
-
-// MARK: - UITableViewDelegate
-extension FiguresInTheWorldViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let countryFigures = viewModel.coronavirusWorldFigures[indexPath.row]
-//        let mapViewModel = MapViewModel(latitude: countryFigures.lat, longitude: countryFigures.long)
-//        let mapViewController = MapViewController(viewModel: mapViewModel)
-//        
-//        let navigationController = UINavigationController(rootViewController: mapViewController)
-//        navigationController.modalPresentationStyle = UIModalPresentationStyle.popover
-//        present(navigationController, animated: true, completion: nil)
-//    }
 }
 
 // MARK: - UITableViewDataSource
@@ -175,16 +165,11 @@ extension FiguresInTheWorldViewController: UISearchBarDelegate {
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         viewModel.searchActive = false
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.searchActive = false
-        figuresTableView.reloadData()
+//        figuresTableView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filterFigures(byString: searchText)
         figuresTableView.reloadData()
     }
-
 }

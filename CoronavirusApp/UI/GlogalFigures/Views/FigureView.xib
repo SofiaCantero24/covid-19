@@ -15,20 +15,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FigureView" customModule="CoronavirusApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="261"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esg-d9-ynL">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="261"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWH-18-OHj" customClass="EFCountingLabel" customModule="EFCountingLabel">
-                            <rect key="frame" x="165" y="92" width="84.5" height="37"/>
+                            <rect key="frame" x="165" y="21.5" width="84.5" height="37"/>
                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="30"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E02-eL-pm2">
-                            <rect key="frame" x="179" y="138.5" width="56.5" height="24.5"/>
+                            <rect key="frame" x="179" y="68" width="56.5" height="24.5"/>
                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -40,10 +40,11 @@
                         <constraint firstItem="E02-eL-pm2" firstAttribute="centerX" secondItem="esg-d9-ynL" secondAttribute="centerX" id="NLN-ya-QlJ"/>
                         <constraint firstItem="E02-eL-pm2" firstAttribute="centerY" secondItem="esg-d9-ynL" secondAttribute="centerY" constant="20" id="VNy-iQ-nmA"/>
                         <constraint firstItem="XWH-18-OHj" firstAttribute="centerY" secondItem="esg-d9-ynL" secondAttribute="centerY" constant="-20" id="eLw-yW-Oy4"/>
+                        <constraint firstAttribute="height" constant="120" id="gSv-IS-3mB"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="esg-d9-ynL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4E-x1-6Da"/>
                 <constraint firstAttribute="bottom" secondItem="esg-d9-ynL" secondAttribute="bottom" id="eis-ku-4FI"/>
