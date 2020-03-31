@@ -18,15 +18,3 @@ extension Formatter {
     }()
 }
 
-extension Int {
-    var formattedWithSeparator: String {
-        return Formatter.withSeparator.string(for: self) ?? ""
-    }
-}
-
-extension String {
-    var stringWithoutGroupingSeparator: String {
-        return self.replacingOccurrences(of: ",", with: "")
-    }
-}
-

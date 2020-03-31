@@ -40,11 +40,13 @@ class MapViewModel {
                                        countryName: figure.countryRegion,
                                        confirmedCases: "Hay \(figure.confirmed) casos confirmados")
             }
+            let confirmedCasesDescription = confirmedCases.isSingular ? Localizables.confirmedDescriptionSingular
+                : String(format: Localizables.confirmedDescriptionPlural, confirmedCases.formattedWithSeparator)
             return CountryLocation(lat: lat,
                                    long: long,
                                    markerSize: size,
                                    countryName: figure.countryRegion,
-                                   confirmedCases: "Hay \(confirmedCases.formattedWithSeparator) casos confirmados")
+                                   confirmedCases: confirmedCasesDescription)
         }
     }
     

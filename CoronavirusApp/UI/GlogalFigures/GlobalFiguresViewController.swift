@@ -41,8 +41,8 @@ class GlobalFiguresViewController: UIViewController {
     private func setupBackgroundView() {
         contentView.backgroundColor = .selected
         backgroundView.backgroundColor = .selected
-        titleLabel.text = "COVID-19"
-        subtitleLabel.text = "Global Figures"
+        titleLabel.text = Localizables.appTitle
+        subtitleLabel.text = Localizables.globalFiguresSubtitle
         titleLabel.textColor = .white
         subtitleLabel.textColor = .white
     }
@@ -59,9 +59,18 @@ class GlobalFiguresViewController: UIViewController {
             let deathStats = Int(globalStats.deaths!),
             let recoveredStats = Int(globalStats.recovered!) else { return }
         let maxFigure = max(confirmedStats, deathStats, recoveredStats)
-        setupFigureView(figure: confirmedStats, description: "Confirmed", figureColor: .green, maxFigure: maxFigure)
-        setupFigureView(figure: deathStats, description: "Deaths", figureColor: .red, maxFigure: maxFigure)
-        setupFigureView(figure: recoveredStats, description: "Recoveries", figureColor: .orange, maxFigure: maxFigure)
+        setupFigureView(figure: confirmedStats,
+                        description: Localizables.confirmedCases,
+                        figureColor: .green,
+                        maxFigure: maxFigure)
+        setupFigureView(figure: deathStats,
+                        description: Localizables.deathCases,
+                        figureColor: .red,
+                        maxFigure: maxFigure)
+        setupFigureView(figure: recoveredStats,
+                        description: Localizables.recoveredCases,
+                        figureColor: .orange,
+                        maxFigure: maxFigure)
         figuresAnimation()
     }
     

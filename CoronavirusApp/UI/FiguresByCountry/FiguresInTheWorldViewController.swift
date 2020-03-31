@@ -8,18 +8,6 @@
 
 import UIKit
 
-enum TabType: Int {
-    case confirmed = 0
-    case deaths = 1
-    case recoveries = 2
-}
-
-struct Constants {
-    static let searchBarHeight: CGFloat = 60
-    static let imageInsets: CGFloat = 7
-    static let contentCornerRadious: CGFloat = 25
-}
-
 class FiguresInTheWorldViewController: UIViewController {
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var searchButton: UIButton!
@@ -58,8 +46,8 @@ class FiguresInTheWorldViewController: UIViewController {
     
     private func setupBackgoundView() {
         backgroundView.backgroundColor = .selected
-        titleLabel.text = "COVID-19"
-        subtitleLabel.text = "Search figures by country"
+        titleLabel.text = Localizables.appTitle
+        subtitleLabel.text = Localizables.figuresByCountrySubtitle
         titleLabel.textColor = .white
         subtitleLabel.textColor = .white
         searchButton.tintColor = .white
@@ -83,15 +71,15 @@ class FiguresInTheWorldViewController: UIViewController {
             self.createTabView(tabViewType: .confirmed,
                                figure: confirmedFigure.formattedWithSeparator,
                                selected: true,
-                               description: "Confirmed")
+                               description: Localizables.confirmedCases)
             self.createTabView(tabViewType: .deaths,
                                figure: deathsFigure.formattedWithSeparator,
                                selected: false,
-                               description: "Deaths")
+                               description: Localizables.deathCases)
             self.createTabView(tabViewType: .recoveries,
                                figure: recoveredFigure.formattedWithSeparator,
                                selected: false,
-                               description: "Recovered")
+                               description: Localizables.recoveredCases)
         }
     }
     
@@ -108,7 +96,7 @@ class FiguresInTheWorldViewController: UIViewController {
     }
     
     private func setupSearchView() {
-        searchBar.placeholder = "Search countries.."
+        searchBar.placeholder = Localizables.searchBarPlaceholder
         searchBarHeightConstraint.constant = 0
         searchBar.delegate = self
     }
@@ -165,7 +153,6 @@ extension FiguresInTheWorldViewController: UISearchBarDelegate {
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         viewModel.searchActive = false
-//        figuresTableView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

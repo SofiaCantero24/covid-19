@@ -20,5 +20,4 @@ extension UIColor {
     static let lightGray = UIColor(red: 168/255, green: 169/255, blue: 172/255, alpha: 1)
     static let markerBorder = UIColor(red: 219/255, green: 107/255, blue: 47/255, alpha: 1)
     static let markerFill = UIColor(red: 219/255, green: 107/255, blue: 47/255, alpha: 0.4)
-    
 }

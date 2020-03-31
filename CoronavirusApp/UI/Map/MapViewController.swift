@@ -12,9 +12,9 @@ import GoogleMaps
 class MapViewController: UIViewController {
     @IBOutlet weak var countryMap: UIView!
     
-    var locationManager = CLLocationManager()
     let viewModel = MapViewModel()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,17 +25,19 @@ class MapViewController: UIViewController {
         }
     }
 
-    func setupMap(withLocationMarker locationMarkers: [CountryLocation]) {
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 3.0)
+    // MARK: - Private methods
+    private func setupMap(withLocationMarker locationMarkers: [CountryLocation]) {
+        let camera = GMSCameraPosition.camera(withLatitude: Constants.latitude,
+                                              longitude: Constants.longitude,
+                                              zoom: 3.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
         mapView.settings.zoomGestures = true
-        mapView.delegate = self
         
         setupMarkers(locationMarkers, inMap: mapView)
     }
     
-    func setupMarkers(_ locationMarkers: [CountryLocation], inMap map: GMSMapView) {
+    private func setupMarkers(_ locationMarkers: [CountryLocation], inMap map: GMSMapView) {
         for location in locationMarkers {
             let iconView = MarkerView(frame: CGRect(x: 0, y: 0,
                                                     width: location.markerSize,
@@ -50,8 +52,4 @@ class MapViewController: UIViewController {
             marker.map = map
         }
     }
-}
-
-extension MapViewController: GMSMapViewDelegate {
-    
 }
