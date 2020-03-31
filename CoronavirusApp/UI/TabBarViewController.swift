@@ -15,5 +15,8 @@ class TabBarViewController: UITabBarController {
         tabBar.clipsToBounds = true
         tabBar.layer.cornerRadius = 20
         tabBar.backgroundColor = .white
+        tabBar.items?[0].title = Localizables.tabBarCountries
+        tabBar.items?[1].title = Localizables.tabBarGlobal
+        tabBar.items?[2].title = Localizables.tabBarMaps
     }
 }

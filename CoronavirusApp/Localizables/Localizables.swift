@@ -18,4 +18,7 @@ struct Localizables {
     static let confirmedDescriptionPlural = "ConfirmedDescriptionPlural".localizable
     static let confirmedDescriptionSingular = "ConfirmedDescriptionSingular".localizable
     static let searchBarPlaceholder = "SearchBarPlaceholder".localizable
+    static let tabBarCountries = "TabBarCountries".localizable
+    static let tabBarGlobal = "TabBarGlobal".localizable
+    static let tabBarMaps = "TabBarMaps".localizable
 }

@@ -14,3 +14,6 @@
 "ConfirmedDescriptionPlural" = "There are %@ confirmed cases";
 "ConfirmedDescriptionSingular" = "There is 1 confirmed case";
 "SearchBarPlaceholder" = "Search countries..";
+"TabBarCountries" = "Countries";
+"TabBarGlobal" = "Global";
+"TabBarMaps" = "Maps";
