@@ -35,7 +35,10 @@ class FigureView: UIView {
         figureLabel.counter.timingFunction = EFTimingFunction.easeOut(easingRate: 3)
     }
     
-    func figureAnimation() {
-        figureLabel.countFromZeroTo(CGFloat(viewModel.figure))
+    func figureAnimation(withMaxFigure max: Int? = nil) {
+        let figure = max ?? viewModel.figure
+        viewModel.figure = figure
+        figureLabel.text = "\(0)"
+        figureLabel.countFromZeroTo(CGFloat(figure))
     }
 }

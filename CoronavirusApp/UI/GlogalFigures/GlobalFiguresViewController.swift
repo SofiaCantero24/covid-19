@@ -67,27 +67,22 @@ class GlobalFiguresViewController: UIViewController {
         guard let confirmedStats = Int(globalStats.confirmed!),
             let deathStats = Int(globalStats.deaths!),
             let recoveredStats = Int(globalStats.recovered!) else { return }
-        let maxFigure = max(confirmedStats, deathStats, recoveredStats)
         setupFigureView(figure: confirmedStats,
                         description: Localizables.confirmedCases,
-                        figureColor: .green,
-                        maxFigure: maxFigure)
+                        figureColor: .green)
         setupFigureView(figure: deathStats,
                         description: Localizables.deathCases,
-                        figureColor: .red,
-                        maxFigure: maxFigure)
+                        figureColor: .red)
         setupFigureView(figure: recoveredStats,
                         description: Localizables.recoveredCases,
-                        figureColor: .orange,
-                        maxFigure: maxFigure)
+                        figureColor: .orange)
         figuresAnimation()
     }
     
-    private func setupFigureView(figure: Int, description: String, figureColor: UIColor, maxFigure: Int) {
+    private func setupFigureView(figure: Int, description: String, figureColor: UIColor) {
         let viewModel = FigureViewModel(figure: figure,
                                         description: description,
-                                        figureColor: figureColor,
-                                        maxFigure: maxFigure)
+                                        figureColor: figureColor)
         let figureView = FigureView.loadFirstSubViewFromNib() as! FigureView
         figureView.viewModel = viewModel
         figureView.setupViewLabels()
@@ -110,11 +105,17 @@ class GlobalFiguresViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
-        for view in figuresStackView.arrangedSubviews {
-            view.removeFromSuperview()
+        viewModel.getGlobalFigures { response in
+            let newFigures = [Int(response?.stats?.confirmed ?? "") ?? 0,
+                              Int(response?.stats?.deaths ?? "") ?? 0,
+                              Int(response?.stats?.recovered ?? "") ?? 0]
+            for (index, view) in self.figuresStackView.arrangedSubviews.enumerated() {
+                if let figureView = view as? FigureView {
+                    figureView.figureAnimation(withMaxFigure: newFigures[index])
+                }
+            }
         }
-        setupFiguresStackView()
-        figuresAnimation()
+        
         refreshButtonAnimation()
     }
 }

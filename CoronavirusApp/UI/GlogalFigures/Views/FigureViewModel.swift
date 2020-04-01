@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 struct FigureViewModel {
-    let figure: Int
+    var figure: Int
     let description: String
     let figureColor: UIColor
-    let maxFigure: Int
 }
