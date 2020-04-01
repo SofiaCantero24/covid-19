@@ -25,14 +25,40 @@
                     <view key="view" contentMode="scaleToFill" id="wJO-43-3ry">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zw-KT-1Ik" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfQ-ed-5o7" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="747" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bVE-IN-W1m"/>
+                                    <constraint firstAttribute="width" constant="320" id="ceH-l4-zjN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GfQ-ed-5o7" firstAttribute="centerX" secondItem="JGa-D5-sux" secondAttribute="centerX" id="9mO-dh-7wj"/>
+                            <constraint firstItem="5zw-KT-1Ik" firstAttribute="leading" secondItem="JGa-D5-sux" secondAttribute="leading" id="DYm-DQ-2Ac"/>
+                            <constraint firstItem="5zw-KT-1Ik" firstAttribute="trailing" secondItem="JGa-D5-sux" secondAttribute="trailing" id="Jwz-eq-Wrj"/>
+                            <constraint firstAttribute="bottom" secondItem="5zw-KT-1Ik" secondAttribute="bottom" id="MNd-Ng-bT0"/>
+                            <constraint firstItem="5zw-KT-1Ik" firstAttribute="top" secondItem="wJO-43-3ry" secondAttribute="top" id="XiQ-y8-MCd"/>
+                            <constraint firstItem="JGa-D5-sux" firstAttribute="bottom" secondItem="GfQ-ed-5o7" secondAttribute="bottom" constant="16" id="YM4-yQ-nAP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JGa-D5-sux"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="map-icon" id="rns-Ap-y75" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
+                    <connections>
+                        <outlet property="bannerView" destination="GfQ-ed-5o7" id="gWQ-YQ-wgP"/>
+                        <outlet property="mapView" destination="5zw-KT-1Ik" id="mGT-3V-8Fb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIU-UM-Yo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714" y="412"/>
+            <point key="canvasLocation" x="-714.49275362318849" y="411.83035714285711"/>
         </scene>
         <!--Global-->
         <scene sceneID="6r8-9g-sZP">
@@ -79,12 +105,22 @@
                                                     <constraint firstAttribute="height" constant="400" id="Bp3-sI-ZXe"/>
                                                 </constraints>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8O-qv-n5J" customClass="GADBannerView">
+                                                <rect key="frame" x="47" y="558" width="320" height="100"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="NAR-7E-Omm"/>
+                                                    <constraint firstAttribute="width" constant="320" id="bpz-fI-XOK"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="C8O-qv-n5J" secondAttribute="bottom" constant="16" id="6iX-eG-bEV"/>
                                             <constraint firstItem="QvU-vo-iXx" firstAttribute="top" secondItem="WCr-Zy-Ipy" secondAttribute="top" id="CLe-YF-ZH9"/>
                                             <constraint firstItem="QvU-vo-iXx" firstAttribute="leading" secondItem="WCr-Zy-Ipy" secondAttribute="leading" constant="20" id="Dua-cY-uT2"/>
                                             <constraint firstAttribute="trailing" secondItem="QvU-vo-iXx" secondAttribute="trailing" constant="20" id="iOX-E3-eYf"/>
+                                            <constraint firstItem="C8O-qv-n5J" firstAttribute="centerX" secondItem="WCr-Zy-Ipy" secondAttribute="centerX" id="wvd-Jd-yAf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -115,6 +151,7 @@
                     <tabBarItem key="tabBarItem" title="Global" image="world-icon" id="k0q-2o-1GB" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController"/>
                     <connections>
                         <outlet property="backgroundView" destination="LS5-S4-fqi" id="B9F-wO-yo6"/>
+                        <outlet property="bannerView" destination="C8O-qv-n5J" id="1TS-64-8xj"/>
                         <outlet property="contentView" destination="WCr-Zy-Ipy" id="jW1-Mw-ShG"/>
                         <outlet property="figuresStackView" destination="QvU-vo-iXx" id="49a-ys-1iH"/>
                         <outlet property="refreshButton" destination="dTd-fX-lFO" id="KER-JZ-8Se"/>

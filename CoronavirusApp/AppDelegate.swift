@@ -8,12 +8,14 @@
 
 import UIKit
 import GoogleMaps
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyB67l2_xORMb7H6gDD97Bn4IvA8rsMsTVw")
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
 

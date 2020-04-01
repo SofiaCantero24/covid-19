@@ -57,7 +57,6 @@
 		E44FEC8D24257F3D008580C8 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC8B24257F3D008580C8 /* CountryTableViewCell.xib */; };
 		E44FEC8F24258ECB008580C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC8E24258ECB008580C8 /* Main.storyboard */; };
 		E44FEC932425B62D008580C8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC912425B62D008580C8 /* MapViewController.swift */; };
-		E44FEC942425B62D008580C8 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FEC922425B62D008580C8 /* MapViewController.xib */; };
 		E44FEC962425C19E008580C8 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FEC952425C19E008580C8 /* MapViewModel.swift */; };
 		E44FECC324262C1F008580C8 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44FECBF24262C1E008580C8 /* Montserrat-Light.ttf */; };
 		E44FECC424262C1F008580C8 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44FECC024262C1F008580C8 /* Montserrat-Regular.ttf */; };
@@ -165,7 +164,6 @@
 		E44FEC8B24257F3D008580C8 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		E44FEC8E24258ECB008580C8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E44FEC912425B62D008580C8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		E44FEC922425B62D008580C8 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		E44FEC952425C19E008580C8 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E44FECBF24262C1E008580C8 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		E44FECC024262C1F008580C8 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -496,7 +494,6 @@
 			children = (
 				E420EAF4242797870053F54E /* Views */,
 				E44FEC912425B62D008580C8 /* MapViewController.swift */,
-				E44FEC922425B62D008580C8 /* MapViewController.xib */,
 				E44FEC952425C19E008580C8 /* MapViewModel.swift */,
 			);
 			path = Map;
@@ -619,7 +616,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E44FEBDC2423014F008580C8 /* Build configuration list for PBXProject "CoronavirusApp" */;
+			buildConfigurationList = E44FEBDC2423014F008580C8 /* Build configuration list for PBXProject "CoronaviusApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -654,7 +651,6 @@
 				E44FECCD24262EF8008580C8 /* GlobalFigureTabView.xib in Resources */,
 				E44FEBF1242301A0008580C8 /* LaunchScreen.storyboard in Resources */,
 				E44FECC324262C1F008580C8 /* Montserrat-Light.ttf in Resources */,
-				E44FEC942425B62D008580C8 /* MapViewController.xib in Resources */,
 				E44FECC824262CE1008580C8 /* Montserrat-Bold.ttf in Resources */,
 				E44FEBEE242301A0008580C8 /* Preview Assets.xcassets in Resources */,
 				E44FECC624262C1F008580C8 /* Montserrat-Medium.ttf in Resources */,
@@ -999,12 +995,13 @@
 				DEVELOPMENT_TEAM = 8Q3JF4537Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoronavirusApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sofia.CoronavirusApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoronavirusApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1020,12 +1017,13 @@
 				DEVELOPMENT_TEAM = 8Q3JF4537Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoronavirusApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sofia.CoronavirusApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoronavirusApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1118,7 +1116,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E44FEBDC2423014F008580C8 /* Build configuration list for PBXProject "CoronavirusApp" */ = {
+		E44FEBDC2423014F008580C8 /* Build configuration list for PBXProject "CoronaviusApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E44FEC09242301A1008580C8 /* Debug */,

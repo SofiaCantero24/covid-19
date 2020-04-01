@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class GlobalFiguresViewController: UIViewController {
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var figuresStackView: UIStackView!
     @IBOutlet weak var contentView: UIView!
@@ -25,10 +27,7 @@ class GlobalFiguresViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupBackgroundView()
         setupFiguresStackView()
-        refreshButton.imageEdgeInsets = UIEdgeInsets(top: Constants.imageInsets,
-                                                     left: Constants.imageInsets,
-                                                     bottom: Constants.imageInsets,
-                                                     right: Constants.imageInsets)
+        setupBannerView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +37,12 @@ class GlobalFiguresViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    private func setupBannerView() {
+        bannerView.adUnitID = "ca-app-pub-5249500779728690/8295761298"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+    
     private func setupBackgroundView() {
         contentView.backgroundColor = .selected
         backgroundView.backgroundColor = .selected
@@ -45,6 +50,10 @@ class GlobalFiguresViewController: UIViewController {
         subtitleLabel.text = Localizables.globalFiguresSubtitle
         titleLabel.textColor = .white
         subtitleLabel.textColor = .white
+        refreshButton.imageEdgeInsets = UIEdgeInsets(top: Constants.imageInsets,
+                                                     left: Constants.imageInsets,
+                                                     bottom: Constants.imageInsets,
+                                                     right: Constants.imageInsets)
     }
     
     private func setupFiguresStackView() {

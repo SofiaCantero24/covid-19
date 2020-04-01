@@ -12,6 +12,7 @@ target 'CoronavirusApp' do
   pod 'RAMAnimatedTabBarController'
   pod 'GoogleMaps'
   pod 'EFCountingLabel'
+  pod 'Google-Mobile-Ads-SDK'
   target 'CoronavirusAppTests' do
     inherit! :search_paths
     # Pods for testing

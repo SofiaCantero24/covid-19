@@ -8,10 +8,11 @@
 
 import UIKit
 import GoogleMaps
+import GoogleMobileAds
 
 class MapViewController: UIViewController {
-    @IBOutlet weak var countryMap: UIView!
-    
+    @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var mapView: GMSMapView!
     let viewModel = MapViewModel()
     
     // MARK: - Lifecycle
@@ -19,6 +20,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupBannerView()
         viewModel.getCountryLocationArray { countryLocations in
             guard let countryLocations = countryLocations else { return }
             self.setupMap(withLocationMarker: countryLocations)
@@ -26,14 +28,18 @@ class MapViewController: UIViewController {
     }
 
     // MARK: - Private methods
+    private func setupBannerView() {
+        bannerView.adUnitID = "ca-app-pub-5249500779728690/7158580074"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
+    
     private func setupMap(withLocationMarker locationMarkers: [CountryLocation]) {
         let camera = GMSCameraPosition.camera(withLatitude: Constants.latitude,
                                               longitude: Constants.longitude,
                                               zoom: 3.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
+        mapView.camera = camera
         mapView.settings.zoomGestures = true
-        
         setupMarkers(locationMarkers, inMap: mapView)
     }
     
