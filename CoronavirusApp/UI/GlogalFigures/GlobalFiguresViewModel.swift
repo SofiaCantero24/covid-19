@@ -14,7 +14,7 @@ class GlobalFiguresViewModel {
     let colors: [UIColor] = [.green, .red, .yellow]
     
     func getGlobalFigures(completion: @escaping (GlobalStats?) -> Void) {
-        SAGlobalFiguresServiceResult.shared.getGlobalFigures(success: { [weak self] (response) in
+        SAGlobalFiguresServiceResult.shared.getGlobalFigures(success: { (response) in
             print(response)
             completion(response)
             //self?.getFiguresByCountry()

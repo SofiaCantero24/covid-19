@@ -13,7 +13,7 @@ class SAFiguresByCountryServiceResult {
     static let shared: SAFiguresByCountryServiceResult = SAFiguresByCountryServiceResult()
     
     func getFiguresByCountry(success:@escaping (CoronavirusCountries) -> Void,
-                          failure:@escaping (Error) -> Void) {
+                             failure:@escaping (Error) -> Void) {
         
         Network.request(target: .getFiguresByCountry,
                         success: { (servicesResponse) in

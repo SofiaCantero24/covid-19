@@ -20,6 +20,10 @@ class GlobalFiguresViewController: UIViewController {
     
     let viewModel = GlobalFiguresViewModel()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

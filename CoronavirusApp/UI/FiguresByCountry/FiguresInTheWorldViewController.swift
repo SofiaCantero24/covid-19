@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class FiguresInTheWorldViewController: UIViewController {
     @IBOutlet weak var searchBarView: UIView!
@@ -25,16 +26,15 @@ class FiguresInTheWorldViewController: UIViewController {
     let viewModel = FiguresInTheWorldViewModel()
     var searchBarShown = false
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = Constants.contentCornerRadious
-        searchButton.imageEdgeInsets = UIEdgeInsets(top: Constants.imageInsets,
-                                                    left: Constants.imageInsets,
-                                                    bottom: Constants.imageInsets,
-                                                    right: Constants.imageInsets)
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
@@ -44,6 +44,14 @@ class FiguresInTheWorldViewController: UIViewController {
         setupTableView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if viewModel.coronavirusWorldFigures.isEmpty {
+            HUD.show(.progress)
+        }
+    }
+    
+    // MARK:- Private Methods
     private func setupBackgoundView() {
         backgroundView.backgroundColor = .selected
         titleLabel.text = Localizables.appTitle
@@ -51,46 +59,33 @@ class FiguresInTheWorldViewController: UIViewController {
         titleLabel.textColor = .white
         subtitleLabel.textColor = .white
         searchButton.tintColor = .white
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = Constants.contentCornerRadious
     }
     
-    private func setupTableView() {
-        figuresTableView.dataSource = self
-        figuresTableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil),
-                                  forCellReuseIdentifier: "CountryTableViewCell")
-        viewModel.getFiguresByCountry {
-            self.figuresTableView.reloadData()
-        }
-    }
-
     private func setupTabViews() {
-        viewModel.getGlobalFigures { globalStats in
-            guard let figures = globalStats?.stats else { return }
-            guard let confirmedFigure = Int(figures.confirmed ?? ""),
-                let deathsFigure = Int(figures.deaths ?? ""),
-                let recoveredFigure = Int(figures.recovered ?? "") else { return }
-            self.createTabView(tabViewType: .confirmed,
-                               figure: confirmedFigure.formattedWithSeparator,
-                               selected: true,
-                               description: Localizables.confirmedCases)
-            self.createTabView(tabViewType: .deaths,
-                               figure: deathsFigure.formattedWithSeparator,
-                               selected: false,
-                               description: Localizables.deathCases)
-            self.createTabView(tabViewType: .recoveries,
-                               figure: recoveredFigure.formattedWithSeparator,
-                               selected: false,
-                               description: Localizables.recoveredCases)
-        }
+        guard let figures = viewModel.globalStats?.stats else { return }
+        guard let confirmedFigure = Int(figures.confirmed ?? ""),
+            let deathsFigure = Int(figures.deaths ?? ""),
+            let recoveredFigure = Int(figures.recovered ?? "") else { return }
+        self.createTabView(tabViewType: .confirmed,
+                           figure: confirmedFigure.formattedWithSeparator,
+                           selected: true,
+                           description: Localizables.confirmedCases)
+        self.createTabView(tabViewType: .deaths,
+                           figure: deathsFigure.formattedWithSeparator,
+                           selected: false,
+                           description: Localizables.deathCases)
+        self.createTabView(tabViewType: .recoveries,
+                           figure: recoveredFigure.formattedWithSeparator,
+                           selected: false,
+                           description: Localizables.recoveredCases)
     }
     
     private func createTabView(tabViewType: TabType, figure: String, selected: Bool, description: String) {
         guard let tabView = GlobalFigureTabView.loadFirstSubViewFromNib() as? GlobalFigureTabView else { return }
         tabView.setupTabView(tabViewType: tabViewType, figure: figure, selected: selected, description: description)
         figuresStackView.addArrangedSubview(tabView)
-        setupGestureRecognizer(inTabView: tabView)
-    }
-    
-    private func setupGestureRecognizer(inTabView tabView: UIView) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         tabView.addGestureRecognizer(tap)
     }
@@ -99,6 +94,21 @@ class FiguresInTheWorldViewController: UIViewController {
         searchBar.placeholder = Localizables.searchBarPlaceholder
         searchBarHeightConstraint.constant = 0
         searchBar.delegate = self
+        searchButton.imageEdgeInsets = UIEdgeInsets(top: Constants.imageInsets,
+                                                    left: Constants.imageInsets,
+                                                    bottom: Constants.imageInsets,
+                                                    right: Constants.imageInsets)
+    }
+    
+    private func setupTableView() {
+        figuresTableView.dataSource = self
+        figuresTableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil),
+                                  forCellReuseIdentifier: "CountryTableViewCell")
+        
+        viewModel.getFiguresByCountry {
+            self.figuresTableView.reloadData()
+            HUD.hide()
+        }
     }
     
     @objc

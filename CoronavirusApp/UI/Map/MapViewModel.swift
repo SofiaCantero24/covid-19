@@ -31,8 +31,8 @@ class MapViewModel {
         let greatestValue = greatestConfirmedValue(fromFigures: array)
         return array.map { figure in
             let size = calculateMarkerSize(withValue: figure.confirmed, greatestValue: greatestValue)
-            guard let lat = Double(figure.lat),
-                let long = Double(figure.long),
+            guard let lat = Double(figure.lat ?? ""),
+                let long = Double(figure.long ?? ""),
                 let confirmedCases = Int(figure.confirmed) else {
                 return CountryLocation(lat: 0,
                                        long: 0,

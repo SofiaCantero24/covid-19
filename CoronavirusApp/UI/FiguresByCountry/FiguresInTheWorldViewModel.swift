@@ -17,6 +17,11 @@ class FiguresInTheWorldViewModel {
         return searchActive ? filteredFigures : coronavirusWorldFigures
     }
     
+    var globalStats: GlobalStats? {
+        return SAGlobalFiguresServiceResult.shared.globalStatsResponse
+    }
+    
+    //MARK: - Public Methods
     func getFiguresByCountry(completion: @escaping () -> Void) {
          SAFiguresByCountryServiceResult.shared.getFiguresByCountry(success: { [weak self] (response) in
             self?.formatFigures(worldFigures: response.data)
@@ -26,29 +31,6 @@ class FiguresInTheWorldViewModel {
             completion()
          }
      }
-    
-    func getGlobalFigures(completion: @escaping (GlobalStats?) -> Void) {
-        SAGlobalFiguresServiceResult.shared.getGlobalFigures(success: { [weak self] (response) in
-            completion(response)
-        }) { (error) in
-            
-        }
-    }
-    
-    func formatFigures(worldFigures: [FiguresByCountry]) {
-        coronavirusWorldFigures = worldFigures.map({ countryFigure in
-            guard let confirmed = Int(countryFigure.confirmed),
-                let death = Int(countryFigure.deaths),
-                let recovered = Int(countryFigure.recovered) else { return countryFigure }
-            return FiguresByCountry(idApi: countryFigure.idApi,
-                                    countryRegion: countryFigure.countryRegion,
-                                    lat: countryFigure.lat,
-                                    long: countryFigure.long,
-                                    confirmed: confirmed.formattedWithSeparator,
-                                    deaths: death.formattedWithSeparator,
-                                    recovered: recovered.formattedWithSeparator)
-        })
-    }
     
     func orderBy(tabType: TabType) {
         coronavirusWorldFigures.sort { (last, current) -> Bool in
@@ -78,6 +60,22 @@ class FiguresInTheWorldViewModel {
         }
         filteredFigures = coronavirusWorldFigures.filter({ figures -> Bool in
             return figures.countryRegion.lowercased().contains(string.lowercased())
+        })
+    }
+    
+    //MARK:- Private Methods
+    private func formatFigures(worldFigures: [FiguresByCountry]) {
+        coronavirusWorldFigures = worldFigures.map({ countryFigure in
+            guard let confirmed = Int(countryFigure.confirmed),
+                let death = Int(countryFigure.deaths),
+                let recovered = Int(countryFigure.recovered) else { return countryFigure }
+            return FiguresByCountry(idApi: countryFigure.idApi,
+                                    countryRegion: countryFigure.countryRegion,
+                                    lat: countryFigure.lat,
+                                    long: countryFigure.long,
+                                    confirmed: confirmed.formattedWithSeparator,
+                                    deaths: death.formattedWithSeparator,
+                                    recovered: recovered.formattedWithSeparator)
         })
     }
 }

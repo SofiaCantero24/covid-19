@@ -12,6 +12,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectedIndex = 1
         tabBar.clipsToBounds = true
         tabBar.layer.cornerRadius = 20
         tabBar.backgroundColor = .white
