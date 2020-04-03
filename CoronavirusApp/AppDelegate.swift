@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GoogleMobileAds
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyB67l2_xORMb7H6gDD97Bn4IvA8rsMsTVw")
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        FirebaseApp.configure()
         return true
     }
 

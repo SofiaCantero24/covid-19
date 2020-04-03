@@ -13,6 +13,8 @@ target 'CoronavirusApp' do
   pod 'GoogleMaps'
   pod 'EFCountingLabel'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   target 'CoronavirusAppTests' do
     inherit! :search_paths
     # Pods for testing

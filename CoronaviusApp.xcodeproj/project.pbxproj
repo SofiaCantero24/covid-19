@@ -66,6 +66,7 @@
 		E44FECCD24262EF8008580C8 /* GlobalFigureTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44FECCC24262EF8008580C8 /* GlobalFigureTabView.xib */; };
 		E44FECCF24263401008580C8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FECCE24263401008580C8 /* UIColor+Extension.swift */; };
 		E44FECD124265AEA008580C8 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FECD024265AEA008580C8 /* Formatter+Extension.swift */; };
+		E46CA720243799BC00CF7B0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46CA71F243799BC00CF7B0F /* GoogleService-Info.plist */; };
 		EA8244F753727AEA915581BD /* libPods-CoronavirusApp-CoronavirusAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B79F7367E8D9937A7DC2BB79 /* libPods-CoronavirusApp-CoronavirusAppUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,7 @@
 		E44FECCC24262EF8008580C8 /* GlobalFigureTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlobalFigureTabView.xib; sourceTree = "<group>"; };
 		E44FECCE24263401008580C8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E44FECD024265AEA008580C8 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
+		E46CA71F243799BC00CF7B0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 				E44FEBEA242301A0008580C8 /* Assets.xcassets */,
 				E44FEBEF242301A0008580C8 /* LaunchScreen.storyboard */,
 				E44FEBF2242301A0008580C8 /* Info.plist */,
+				E46CA71F243799BC00CF7B0F /* GoogleService-Info.plist */,
 				E44FEBEC242301A0008580C8 /* Preview Content */,
 			);
 			path = CoronavirusApp;
@@ -541,6 +544,7 @@
 				E44FEBDF2423014F008580C8 /* Resources */,
 				E420EAE92426FA8B0053F54E /* CopyFiles */,
 				8BA0A55C8E0359B6137F9B69 /* [CP] Copy Pods Resources */,
+				E46CA7212437AF9E00CF7B0F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -640,6 +644,7 @@
 			files = (
 				E44FECC424262C1F008580C8 /* Montserrat-Regular.ttf in Resources */,
 				E44FEC8D24257F3D008580C8 /* CountryTableViewCell.xib in Resources */,
+				E46CA720243799BC00CF7B0F /* GoogleService-Info.plist in Resources */,
 				E420EB032432BB9C0053F54E /* English.strings in Resources */,
 				E44FEC8F24258ECB008580C8 /* Main.storyboard in Resources */,
 				E44FEC352423C357008580C8 /* FigureView.xib in Resources */,
@@ -771,6 +776,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoronavirusApp-CoronavirusAppUITests/Pods-CoronavirusApp-CoronavirusAppUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E46CA7212437AF9E00CF7B0F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

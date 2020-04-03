@@ -1,6 +1,50 @@
 PODS:
   - Alamofire (4.8.2)
   - EFCountingLabel (5.1.1)
+  - Firebase/Analytics (6.21.0):
+    - Firebase/Core
+  - Firebase/Core (6.21.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.4.0)
+  - Firebase/CoreOnly (6.21.0):
+    - FirebaseCore (= 6.6.5)
+  - Firebase/Crashlytics (6.21.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 4.0.0-beta.6)
+  - FirebaseAnalytics (6.4.0):
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleAppMeasurement (= 6.4.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (= 0.3.9011)
+  - FirebaseAnalyticsInterop (1.5.0)
+  - FirebaseCore (6.6.5):
+    - FirebaseCoreDiagnostics (~> 1.2)
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+  - FirebaseCoreDiagnostics (1.2.2):
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleDataTransportCCTSupport (~> 2.0)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+    - nanopb (~> 0.3.901)
+  - FirebaseCoreDiagnosticsInterop (1.2.0)
+  - FirebaseCrashlytics (4.0.0-beta.6):
+    - FirebaseAnalyticsInterop (~> 1.2)
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleDataTransport (~> 5.1)
+    - GoogleDataTransportCCTSupport (>= 2.0.1, ~> 2.0)
+    - nanopb (~> 0.3.901)
+    - PromisesObjC (~> 1.2)
+  - FirebaseInstallations (1.1.1):
+    - FirebaseCore (~> 6.6)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+    - PromisesObjC (~> 1.2)
   - Google-Mobile-Ads-SDK (7.57.0):
     - GoogleAppMeasurement (~> 6.0)
   - GoogleAppMeasurement (6.4.0):
@@ -9,6 +53,10 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (= 0.3.9011)
+  - GoogleDataTransport (5.1.0)
+  - GoogleDataTransportCCTSupport (2.0.1):
+    - GoogleDataTransport (~> 5.1)
+    - nanopb (~> 0.3.901)
   - GoogleMaps (3.8.0):
     - GoogleMaps/Maps (= 3.8.0)
   - GoogleMaps/Base (3.8.0)
@@ -30,6 +78,8 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.5.2)"
   - GoogleUtilities/Reachability (6.5.2):
     - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.5.2):
+    - GoogleUtilities/Logger
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -41,6 +91,7 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PKHUD (5.3.0)
+  - PromisesObjC (1.2.8)
   - RAMAnimatedTabBarController (5.1.0)
   - Result (4.1.0)
   - SwiftyJSON (5.0.0)
@@ -48,6 +99,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
   - EFCountingLabel
+  - Firebase/Analytics
+  - Firebase/Crashlytics
   - Google-Mobile-Ads-SDK
   - GoogleMaps
   - Moya (~> 13.0.1)
@@ -59,13 +112,24 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - EFCountingLabel
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseCrashlytics
+    - FirebaseInstallations
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
     - GoogleMaps
     - GoogleUtilities
     - Moya
     - nanopb
     - PKHUD
+    - PromisesObjC
     - RAMAnimatedTabBarController
     - Result
     - SwiftyJSON
@@ -73,17 +137,28 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   EFCountingLabel: 605358591a67a3c92feb7ec32486bfab4a30e2c9
+  Firebase: f378c80340dd41c0ad0914af740c021eb282a04b
+  FirebaseAnalytics: a1a0b3327ceb5cd5b4bacffdb293f6c909aa087d
+  FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
+  FirebaseCore: 9f495d3afacb7b558711e6218ebb14b1c51b5802
+  FirebaseCoreDiagnostics: e9b4cd8ba60dee0f2d13347332e4b7898cca5b61
+  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
+  FirebaseCrashlytics: b9e729da8b80d9c45f234f791a73b5fe647d4c31
+  FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
   Google-Mobile-Ads-SDK: ec897018b9ab9b447e7aa4876e7f75aba13ba2de
   GoogleAppMeasurement: 6e68a94d0eaeb1d73ef6b0ed4f7334e29d63ae29
+  GoogleDataTransport: b29a21d813e906014ca16c00897827e40e4a24ab
+  GoogleDataTransportCCTSupport: 6f15a89b0ca35d6fa523e1f752ef818588885988
   GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
   GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   RAMAnimatedTabBarController: b5c821298071fded801532216ad8a24394f89859
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 0ece809eaeebd4e3f6a9e10154158993119c0c47
+PODFILE CHECKSUM: b8856a20af78cfac72e8faa057a1da01fecfa2d7
 
 COCOAPODS: 1.9.1

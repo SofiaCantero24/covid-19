@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>752996619163-a6shattroh003rvb9dferen50vn7vltj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.752996619163-a6shattroh003rvb9dferen50vn7vltj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB67l2_xORMb7H6gDD97Bn4IvA8rsMsTVw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>752996619163</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Sofia.CoronavirusApp</string>
+	<key>PROJECT_ID</key>
+	<string>cogent-metric-271623</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cogent-metric-271623.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:752996619163:ios:17b4f90f57ed9f3d39073e</string>
+	<key>DATABASE_URL</key>
+	<string>https://cogent-metric-271623.firebaseio.com</string>
+</dict>
+</plist>
