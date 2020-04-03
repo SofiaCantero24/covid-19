@@ -1,0 +1,19 @@
+/* 
+  English.strings
+  CoronavirusApp
+
+  Created by Junior Sancho on 3/30/20.
+  Copyright © 2020 Sofia Cantero. All rights reserved.
+*/
+"AppTitle" = "COVID-19";
+"GlobalFiguresSubtitle" = "Global Figures";
+"FiguresByCountrySubtitle" = "Search figures by country";
+"ConfirmedCases" = "Confirmed";
+"DeathCases" = "Deaths";
+"RecoveredCases" = "Recovered";
+"ConfirmedDescriptionPlural" = "There are %@ confirmed cases";
+"ConfirmedDescriptionSingular" = "There is 1 confirmed case";
+"SearchBarPlaceholder" = "Search countries..";
+"TabBarCountries" = "Countries";
+"TabBarGlobal" = "Global";
+"TabBarMaps" = "Maps";
