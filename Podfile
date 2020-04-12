@@ -9,7 +9,6 @@ target 'CoronavirusApp' do
   pod 'Moya', '~> 13.0.1'
   pod 'SwiftyJSON'
   pod 'PKHUD'
-  pod 'RAMAnimatedTabBarController'
   pod 'GoogleMaps'
   pod 'EFCountingLabel'
   pod 'Google-Mobile-Ads-SDK'

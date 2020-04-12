@@ -30,14 +30,14 @@ class MapViewModel {
     private func createCountryLocationArray(from array: [FiguresByCountry]) -> [CountryLocation] {
         let greatestValue = greatestConfirmedValue(fromFigures: array)
         return array.map { figure in
-            let size = calculateMarkerSize(withValue: figure.confirmed, greatestValue: greatestValue)
+            let size = calculateMarkerSize(withValue: figure.confirmed ?? "", greatestValue: greatestValue)
             guard let lat = Double(figure.lat ?? ""),
                 let long = Double(figure.long ?? ""),
-                let confirmedCases = Int(figure.confirmed) else {
+                let confirmedCases = Int(figure.confirmed ?? "") else {
                 return CountryLocation(lat: 0,
                                        long: 0,
                                        markerSize: size,
-                                       countryName: figure.countryRegion,
+                                       countryName: figure.countryRegion ?? "",
                                        confirmedCases: "Hay \(figure.confirmed) casos confirmados")
             }
             let confirmedCasesDescription = confirmedCases.isSingular ? Localizables.confirmedDescriptionSingular
@@ -45,15 +45,15 @@ class MapViewModel {
             return CountryLocation(lat: lat,
                                    long: long,
                                    markerSize: size,
-                                   countryName: figure.countryRegion,
+                                   countryName: figure.countryRegion ?? "",
                                    confirmedCases: confirmedCasesDescription)
         }
     }
     
     private func greatestConfirmedValue(fromFigures figures: [FiguresByCountry]) -> Int {
         let greatestConfirmedFigure = figures.max { last, current in
-            let lastConfirmed = Int(last.confirmed) ?? 0
-            let currentConfirmed = Int(current.confirmed) ?? 0
+            let lastConfirmed = Int(last.confirmed ?? "") ?? 0
+            let currentConfirmed = Int(current.confirmed ?? "") ?? 0
             return lastConfirmed < currentConfirmed
         }
         return Int(greatestConfirmedFigure?.confirmed ?? "") ?? 0

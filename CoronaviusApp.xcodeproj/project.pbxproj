@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		49258D6157CA2933A4D29C32 /* libPods-CoronavirusAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CDB75C86090E4631992AEC /* libPods-CoronavirusAppTests.a */; };
 		6C5F16409BD85DC57FD4CCED /* libPods-CoronavirusApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C937FD61A24ACA38294897E /* libPods-CoronavirusApp.a */; };
-		E420EAEA2426FA970053F54E /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E420EAE72426FA0B0053F54E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E420EAEC242782000053F54E /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420EAEB242782000053F54E /* UIFont+Extension.swift */; };
 		E420EAF124278FD40053F54E /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420EAF024278FD40053F54E /* MarkerView.swift */; };
 		E420EAF8242ABCF50053F54E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420EAF7242ABCF50053F54E /* TabBarViewController.swift */; };
@@ -86,19 +85,6 @@
 			remoteInfo = CoronavirusApp;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E420EAE92426FA8B0053F54E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E420EAEA2426FA970053F54E /* Alamofire.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0FE17F79E2D5B5603301C6B4 /* Pods-CoronavirusAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronavirusAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CoronavirusAppTests/Pods-CoronavirusAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -542,7 +528,6 @@
 				E44FEBDD2423014F008580C8 /* Sources */,
 				E44FEBDE2423014F008580C8 /* Frameworks */,
 				E44FEBDF2423014F008580C8 /* Resources */,
-				E420EAE92426FA8B0053F54E /* CopyFiles */,
 				8BA0A55C8E0359B6137F9B69 /* [CP] Copy Pods Resources */,
 				E46CA7212437AF9E00CF7B0F /* ShellScript */,
 			);
