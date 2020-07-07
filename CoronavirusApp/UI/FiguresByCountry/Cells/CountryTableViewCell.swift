@@ -20,11 +20,11 @@ class CountryTableViewCell: UITableViewCell {
         countryNameLabel.text = data.countryRegion
         switch tabType {
         case .confirmed:
-            figuresLabel.text = data.confirmed
+            figuresLabel.text = data.confirmed?.formattedWithSeparator
         case .deaths:
-            figuresLabel.text = data.deaths
+            figuresLabel.text = data.deaths?.formattedWithSeparator
         case .recoveries:
-            figuresLabel.text = data.recovered
+            figuresLabel.text = data.recovered?.formattedWithSeparator
         }
         
     }

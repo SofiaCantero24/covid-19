@@ -8,11 +8,7 @@
 
 import Foundation
 
-extension String {
-    var stringWithoutGroupingSeparator: String {
-        return self.replacingOccurrences(of: ",", with: "")
-    }
-    
+extension String {    
     var localizable: String {
         let regionCode = Locale.preferredLanguages.first
         var tableName = "English"

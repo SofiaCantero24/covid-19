@@ -14,11 +14,11 @@ struct CoronavirusCountries: Mappable {
 }
 
 struct FiguresByCountry: Mappable {
-    var idApi: String?
+    var idApi: Int?
     var countryRegion: String?
     var lat: String?
     var long: String?
-    var confirmed: String?
-    var deaths: String?
-    var recovered: String?
+    var confirmed: Int?
+    var deaths: Int?
+    var recovered: Int?
 }

@@ -30,15 +30,15 @@ class MapViewModel {
     private func createCountryLocationArray(from array: [FiguresByCountry]) -> [CountryLocation] {
         let greatestValue = greatestConfirmedValue(fromFigures: array)
         return array.map { figure in
-            let size = calculateMarkerSize(withValue: figure.confirmed ?? "", greatestValue: greatestValue)
+            let size = calculateMarkerSize(withValue: figure.confirmed ?? 0, greatestValue: greatestValue)
             guard let lat = Double(figure.lat ?? ""),
                 let long = Double(figure.long ?? ""),
-                let confirmedCases = Int(figure.confirmed ?? "") else {
+                let confirmedCases = figure.confirmed else {
                 return CountryLocation(lat: 0,
                                        long: 0,
                                        markerSize: size,
                                        countryName: figure.countryRegion ?? "",
-                                       confirmedCases: "Hay \(figure.confirmed) casos confirmados")
+                                       confirmedCases: "")
             }
             let confirmedCasesDescription = confirmedCases.isSingular ? Localizables.confirmedDescriptionSingular
                 : String(format: Localizables.confirmedDescriptionPlural, confirmedCases.formattedWithSeparator)
@@ -52,16 +52,15 @@ class MapViewModel {
     
     private func greatestConfirmedValue(fromFigures figures: [FiguresByCountry]) -> Int {
         let greatestConfirmedFigure = figures.max { last, current in
-            let lastConfirmed = Int(last.confirmed ?? "") ?? 0
-            let currentConfirmed = Int(current.confirmed ?? "") ?? 0
+            let lastConfirmed = last.confirmed ?? 0
+            let currentConfirmed = current.confirmed ?? 0
             return lastConfirmed < currentConfirmed
         }
-        return Int(greatestConfirmedFigure?.confirmed ?? "") ?? 0
+        return greatestConfirmedFigure?.confirmed ?? 0
     }
     
-    private func calculateMarkerSize(withValue value: String, greatestValue: Int) -> CGFloat {
-        let confirmedValue = Int(value) ?? 0
-        let percentageSize = confirmedValue * 150 / greatestValue
+    private func calculateMarkerSize(withValue value: Int, greatestValue: Int) -> CGFloat {
+        let percentageSize = value * 150 / greatestValue
         let finalSize = max(CGFloat(percentageSize), CGFloat(20))
         return min(CGFloat(finalSize), CGFloat(150))
     }
